@@ -24,9 +24,14 @@ namespace tdd_bobs_bagels.CSharp.Main
             return bagels.Remove(bagel);
         }
 
-        public void ChangeCapacity(int newCapacity)
+        public bool ChangeCapacity(int newCapacity, string role)
         {
-            this.BasketCapacity = newCapacity;
+            if (role.Equals("Manager"))
+            {
+                this.BasketCapacity = newCapacity;
+                return true;
+            }
+            return false;
         }
 
         public List<string> bagels = new List<string>();

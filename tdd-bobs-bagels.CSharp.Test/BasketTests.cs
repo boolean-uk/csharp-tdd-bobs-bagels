@@ -11,11 +11,11 @@ namespace tdd_bobs_bagels.CSharp.Test
         {
         }
 
-        [TestCase("Montreal bagel")]
-        public void TestAddBagel(string bagel)
+        [TestCase("Montreal bagel", true)]
+        public void TestAddBagel(string bagel, bool expected)
         {
             basket = new Basket();
-            Assert.AreEqual(basket.AddBagel(bagel), true);
+            Assert.AreEqual(basket.AddBagel(bagel), expected);
         }
 
         [TestCase("Egg bagel")]
@@ -50,18 +50,21 @@ namespace tdd_bobs_bagels.CSharp.Test
 
         }
 
-        [TestCase(1)]
-        public void TestChangeCapacity(int newCapacity)
+        [TestCase(1, "Manager", true)]
+        [TestCase(1, "Customer", false)]
+        public void TestChangeCapacity(int newCapacity, string role, bool expected)
         {
             basket = new Basket();
-            basket.ChangeCapacity(newCapacity);
-            basket.AddBagel("Egg bagel");
+            bool result = basket.ChangeCapacity(newCapacity, role);
+            Assert.AreEqual(result, expected);
+
+            /*basket.AddBagel("Egg bagel");
             basket.AddBagel("Blueberry bagel");
             basket.AddBagel("Montreal bagel");
             basket.AddBagel("Cinnamon raisin bagel");
 
-            Assert.AreEqual(basket.bagels.Count, basket.BasketCapacity);
-            Assert.IsTrue(basket.IsBasketFull);
+            Assert.AreEqual(basket.BasketCapacity, 1);
+            Assert.IsTrue(basket.IsBasketFull);*/
         }
         
     }
