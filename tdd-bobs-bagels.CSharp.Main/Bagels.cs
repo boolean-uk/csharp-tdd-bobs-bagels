@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,7 +11,11 @@ namespace tdd_bobs_bagels.CSharp.Main
     {
         public void AddBagel(string bagel)
         {
-            this.BagelBasket.Add(bagel);
+            if (this.BagelBasket.Count < this.BagelBasketMax) 
+            {
+                this.BagelBasket.Add(bagel);
+            }
+            
         }
 
         public bool RemoveBagel(string bagel)
@@ -19,5 +24,8 @@ namespace tdd_bobs_bagels.CSharp.Main
         }
 
         public List<string> BagelBasket { get; set; } = new List<string>();
+        public int BagelBasketMax { get; set; } = 3;
+        public bool BagelBasketFull
+        { get { return this.BagelBasketMax >= this.BagelBasket.Count ? true : false; } }
     }
 }
