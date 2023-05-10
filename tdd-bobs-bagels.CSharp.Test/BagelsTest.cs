@@ -62,7 +62,7 @@ namespace tdd_bobs_bagels.CSharp.Test
             Assert.IsTrue(bagels.BagelBasketFull);
         }
 
-        [TestCase(5)]
+        [TestCase(4)]
         public void ChangeBasketMax(int value) 
         {
             Bagels bagels = new Bagels();
@@ -77,7 +77,23 @@ namespace tdd_bobs_bagels.CSharp.Test
             bagels.AddBagel(bagel4);
             bagels.SetBagelBasketMax(value);
 
-            Assert.AreEqual(bagels.BagelBasketMax, 5);
+            Assert.AreEqual(bagels.BagelBasketMax, 4);
+        }
+
+        [TestCase("blue")]
+        public void RemovedItemExist(string removingBagel)
+        {
+            Bagels bagels = new Bagels();
+            string bagel1 = "regular";
+            string bagel2 = "cheese";
+            string bagel3 = "everything";
+            
+            bagels.AddBagel(bagel1);
+            bagels.AddBagel(bagel2);
+            bagels.AddBagel(bagel3);
+            bagels.RemoveBagel(removingBagel);
+            Assert.IsTrue(bagels.RemoveBagel(removingBagel) == false);
+
         }
 
     }
