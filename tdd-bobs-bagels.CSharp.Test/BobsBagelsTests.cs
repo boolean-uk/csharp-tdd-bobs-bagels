@@ -69,7 +69,19 @@ namespace tdd_bobs_bagels.CSharp.Test
             _basket.AddProduct("Nutella bagel");
             _basket.ChangeBasketCapacity(count);
             Assert.AreEqual(_basket.MaxCapacityBasket, 5);
-        }
+            Assert.AreEqual(_basket.ChangeBasketCapacity(count), $"The new basketsize is {count}");
 
+        }
+        [TestCase(2)]
+        public void TestChangeBasketCapacity1(int count)
+        {
+            BobsBagels _basket = new BobsBagels();
+            _basket.AddProduct("Cheese bagel");
+            _basket.AddProduct("Salmon bagel");
+            _basket.AddProduct("Bacon bagel");
+            _basket.AddProduct("Nutella bagel");
+            _basket.ChangeBasketCapacity(count);
+            Assert.AreEqual(_basket.ChangeBasketCapacity(count), $"There are more items in the basket than {count}");
+        }
     }
 }

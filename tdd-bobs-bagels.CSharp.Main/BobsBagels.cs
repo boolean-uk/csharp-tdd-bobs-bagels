@@ -18,9 +18,19 @@ namespace tdd_bobs_bagels.CSharp.Main
             }
         }
 
-        public void ChangeBasketCapacity(int count)
+        public string ChangeBasketCapacity(int count)
         {
-            MaxCapacityBasket = count;
+            // if basket.count < count
+            if(basket.Count < count) 
+            { 
+                MaxCapacityBasket = count;
+                return $"The new basketsize is {count}";
+            }
+            else
+            {
+                return $"There are more items in the basket than {count}";
+            }
+            //else basket.count > count either remove items from existing basket or give back message
         }
 
         public string RemoveProduct(string item)
