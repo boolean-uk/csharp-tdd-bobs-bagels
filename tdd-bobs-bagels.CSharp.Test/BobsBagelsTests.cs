@@ -33,7 +33,7 @@ namespace tdd_bobs_bagels.CSharp.Test
             _basket.AddProduct("Salmon bagel");
             _basket.RemoveProduct("Salmon bagel");
             Assert.IsFalse(_basket.basket.Contains("Salmon bagel"));
-
         }
+
     }
 }
