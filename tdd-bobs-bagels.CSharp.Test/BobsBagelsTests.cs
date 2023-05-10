@@ -46,5 +46,24 @@ namespace tdd_bobs_bagels.CSharp.Test
             Assert.AreEqual(_basket.RemoveProduct("Cheese bagel"), "Item not found");
         }
 
+        [Test]
+        public void TestBasketCapacityReached()
+        {
+            //I'd like to know when my basket is full when I try adding an item beyond my basket capacity
+            BobsBagels _basket = new BobsBagels();
+            _basket.AddProduct("Cheese bagel");
+            _basket.AddProduct("Salmon bagel");
+            _basket.AddProduct("Bacon bagel");
+            _basket.AddProduct("Nutella bagel");
+            Assert.AreEqual(_basket.basket.Count, _basket.MaxCapacityBasket);
+        }
+
+        [Test]
+        public void TestChangeBasketCapacity()
+        {
+            //I’d like to change the capacity of baskets
+            BobsBagels _basket = new BobsBagels();
+        }
+
     }
 }
