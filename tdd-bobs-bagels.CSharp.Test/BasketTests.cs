@@ -6,11 +6,9 @@ namespace tdd_bobs_bagels.CSharp.Test
 {
     public class BasketTests
     {
-        //private Basket _basket;
         public Basket basket;
         public BasketTests()
         {
-           //_basket = new Basket();
         }
 
         [TestCase("Montreal bagel")]
@@ -34,13 +32,13 @@ namespace tdd_bobs_bagels.CSharp.Test
         public void TestBasketCapacity()
         {
             basket = new Basket();
-            basket.AddBagel("sda");
-            basket.AddBagel("eqweq");
-            basket.AddBagel("xzczx");
-            bool result = basket.AddBagel("dfghdfg");
-            bool expected = false;
+            basket.AddBagel("Egg bagel");
+            basket.AddBagel("Blueberry bagel");
+            basket.AddBagel("Montreal bagel");
+            basket.AddBagel("Cinnamon raisin bagel");
 
-            Assert.AreEqual(result, false);
+            Assert.AreEqual(basket.bagels.Count, basket.BasketCapacity);
+            Assert.IsTrue(basket.IsBasketFull);
         }
 
         [TestCase("Egg bagel", false)]
@@ -51,5 +49,20 @@ namespace tdd_bobs_bagels.CSharp.Test
             Assert.AreEqual(result, expected);
 
         }
+
+        [TestCase(1)]
+        public void TestChangeCapacity(int newCapacity)
+        {
+            basket = new Basket();
+            basket.ChangeCapacity(newCapacity);
+            basket.AddBagel("Egg bagel");
+            basket.AddBagel("Blueberry bagel");
+            basket.AddBagel("Montreal bagel");
+            basket.AddBagel("Cinnamon raisin bagel");
+
+            Assert.AreEqual(basket.bagels.Count, basket.BasketCapacity);
+            Assert.IsTrue(basket.IsBasketFull);
+        }
+        
     }
 }

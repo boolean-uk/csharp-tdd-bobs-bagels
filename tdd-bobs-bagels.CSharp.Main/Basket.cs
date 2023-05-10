@@ -8,12 +8,10 @@ namespace tdd_bobs_bagels.CSharp.Main
 {
     public class Basket
     {
-        public List<string> bagels = new List<string>();
-        public int BasketCapacity { get; set; } = 3;
-
+        
         public bool AddBagel(string bagel)
         {
-            if (bagels.Count() < BasketCapacity)
+            if (this.bagels.Count < this.BasketCapacity)
             {
                 bagels.Add(bagel);
                 return true;
@@ -26,8 +24,21 @@ namespace tdd_bobs_bagels.CSharp.Main
             return bagels.Remove(bagel);
         }
 
-        
+        public void ChangeCapacity(int newCapacity)
+        {
+            this.BasketCapacity = newCapacity;
+        }
 
+        public List<string> bagels = new List<string>();
+        public int BasketCapacity { get; set; } = 3;
+
+        public bool IsBasketFull
+        {
+            get
+            {
+                return this.BasketCapacity == this.bagels.Count ? true : false;
+            }
+        }
 
     }
 }
