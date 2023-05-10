@@ -14,5 +14,16 @@ namespace tdd_bobs_bagels.CSharp.Test
             bagels.AddBagel(bagel);
             Assert.AreEqual(1, bagels.BagelBasket.Count);
         }
+
+        [TestCase("regular bagel")]
+        public void RemoveBagelTest(string bagel) 
+        {
+            Bagels bagels = new Bagels();
+            bagels.AddBagel(bagel);
+
+            bool result = bagels.RemoveBagel(bagel);
+            Assert.IsTrue(result);
+            Assert.AreEqual(bagels.BagelBasket.Count, 0);
+        }
     }
 }

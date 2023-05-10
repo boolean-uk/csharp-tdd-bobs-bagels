@@ -13,6 +13,11 @@ namespace tdd_bobs_bagels.CSharp.Main
             this.BagelBasket.Add(bagel);
         }
 
+        public bool RemoveBagel(string bagel)
+        {
+            return this.BagelBasket.Remove(bagel);
+        }
+
         public List<string> BagelBasket { get; set; } = new List<string>();
     }
 }
