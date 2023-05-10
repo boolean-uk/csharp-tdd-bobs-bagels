@@ -50,7 +50,69 @@ namespace tdd_bobs_bagels.CSharp.Test
         //As a member of the public,
         //So that I can not overfill my small bagel basket
         //I'd like to know when my basket is full when I try adding an item beyond my basket capacity.
-        []
+        [Test]
+        public void FullBasketTest()
+        {
+            //arrange
+            Basket basket = new Basket();
+
+            string bagel1 = "Plain";
+            string bagel2 = "Cheese";
+            string bagel3 = "Salmon";
+            string bagel4 = "Ham";
+            string bagel5 = "Ham and Cheese";
+
+            //act
+
+            basket.AddBagel(bagel1);
+            basket.AddBagel(bagel2);
+            basket.AddBagel(bagel3);
+            basket.AddBagel(bagel4);
+            basket.AddBagel(bagel5);
+
+
+            //assert
+
+            Assert.AreEqual(basket.Bagels.Count, basket.BagelsMax);
+            Assert.IsTrue(basket.FullBasket);
+        }
+
+
+        //As a Bob's Bagels manager,
+        //So that I can expand my business,
+        //I’d like to change the capacity of baskets.
+
+        [Test]
+        public void ChangeBasketCapacityTast()
+        {
+            //arrange
+            Basket basket = new Basket();
+            int newCapacity = 8;
+
+            //act
+            basket.ChangeBasketCapacity(newCapacity);
+
+            //assert
+            Assert.AreEqual(basket.BagelsMax, newCapacity);
+
+        }
+
+        //As a member of the public
+        //So that I can maintain my sanity
+        //I'd like to know if I try to remove an item that doesn't exist in my basket.
+
+        [TestCase("Glutenfree Bagel")]
+        public void RemoveNotExistingBagelTest(string bagel)
+        {
+            //arranget
+            Basket basket = new Basket();
+
+            //act
+            bool result = basket.RemoveFromBasket(bagel);
+
+            //assert
+            Assert.IsFalse(result);
+        }
 
     }
 }
