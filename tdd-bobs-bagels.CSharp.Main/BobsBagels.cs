@@ -12,7 +12,7 @@ namespace tdd_bobs_bagels.CSharp.Main
         public int MaxCapacityBasket = 3;
         public void AddProduct(string item)
         {
-            if(this.basket.Count < MaxCapacityBasket) 
+            if(this.basket.Count < this.MaxCapacityBasket) 
             { 
             basket.Add(item);
             }
