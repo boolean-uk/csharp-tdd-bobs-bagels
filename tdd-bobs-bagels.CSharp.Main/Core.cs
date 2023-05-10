@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace tdd_bobs_bagels.CSharp.Main
 {
-    public class Core
+    public class Basket
     {
+        public List<string> Bagels { get; set; } = new List<string>();
+
+        public void AddBagel(string bagel)
+        {
+            this.Bagels.Add(bagel);
+        }
+
+        public bool RemoveFromBasket(string bagel)
+        {
+            return this.Bagels.Remove(bagel);
+        }
     }
+
+    
 }
