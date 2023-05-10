@@ -18,6 +18,11 @@ namespace tdd_bobs_bagels.CSharp.Main
             }
         }
 
+        public void ChangeBasketCapacity(int count)
+        {
+            MaxCapacityBasket = count;
+        }
+
         public string RemoveProduct(string item)
         {
             if (basket.Contains(item)) 

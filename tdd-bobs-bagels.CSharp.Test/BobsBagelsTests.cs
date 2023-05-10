@@ -58,11 +58,17 @@ namespace tdd_bobs_bagels.CSharp.Test
             Assert.AreEqual(_basket.basket.Count, _basket.MaxCapacityBasket);
         }
 
-        [Test]
-        public void TestChangeBasketCapacity()
+        [TestCase(5)]
+        public void TestChangeBasketCapacity(int count)
         {
             //I’d like to change the capacity of baskets
             BobsBagels _basket = new BobsBagels();
+            _basket.AddProduct("Cheese bagel");
+            _basket.AddProduct("Salmon bagel");
+            _basket.AddProduct("Bacon bagel");
+            _basket.AddProduct("Nutella bagel");
+            _basket.ChangeBasketCapacity(count);
+            Assert.AreEqual(_basket.MaxCapacityBasket, 5);
         }
 
     }
