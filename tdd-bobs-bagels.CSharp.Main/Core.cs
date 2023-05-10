@@ -33,6 +33,15 @@ namespace tdd_bobs_bagels.CSharp.Main
                 return true;
             }
         }
+        /// <summary>
+        /// removes the bagel returns true if sucess otherwise false || if bagel doesnt exist returns false
+        /// </summary>
+        /// <param name="bagel"></param>
+        /// <returns></returns>
+        public bool RemoveBagelFromBasket(string bagel)
+        {
+            return _basket.Remove(bagel);
+        }
 
         public List<string> Basket {
             get {
