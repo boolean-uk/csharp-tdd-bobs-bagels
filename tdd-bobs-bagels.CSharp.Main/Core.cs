@@ -42,9 +42,18 @@ namespace tdd_bobs_bagels.CSharp.Main
         /// </summary>
         /// <param name="bagel"></param>
         /// <returns></returns>
-        public bool RemoveBagelFromBasket(string bagel)
+        public string RemoveBagelFromBasket(string bagel)
         {
-            return _basket.Remove(bagel);
+            if (_basket.Contains(bagel))
+            {
+             _basket.Remove(bagel);
+                    return "The given bagel removed";
+
+            }
+            else
+            {
+                return "Bagel not found";
+            }
         }
 
         public int ChangeCapacity(int v)
