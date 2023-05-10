@@ -18,7 +18,11 @@ namespace tdd_bobs_bagels.CSharp.Main
         public int MaxCapacity { get; set; } = 3;
 
         public int BasketCapacity { get { return _basket.Count; } } 
-
+        /// <summary>
+        /// checking if the bagel exists or the basket reached its max capacity 
+        /// </summary>
+        /// <param name="bagel"></param>
+        /// <returns></returns>
         public bool AddBagel(string bagel)
         {
             if(_basket.Contains(bagel)) { 
@@ -43,11 +47,20 @@ namespace tdd_bobs_bagels.CSharp.Main
             return _basket.Remove(bagel);
         }
 
+        public int ChangeCapacity(int v)
+        {
+            return MaxCapacity = v;
+        }
+
         public List<string> Basket {
             get {
                 return _basket;
           }
         }
+
+
+
+
 
     }
 }

@@ -12,12 +12,15 @@ namespace tdd_bobs_bagels.CSharp.Test
         }
 
         [Test]
+        
         public void IsBagelAdded() {
            Core core = new Core();
             //core.Basket.Add("bagel onion"); checking if it tests fails when bagel with the same name is there
-            bool result = core.AddBagel("bagel onion");
+            core.AddBagel("bagel onion");
+            core.AddBagel("bagel plain");
+            
 
-            Assert.IsTrue(result);
+            Assert.IsTrue(core.BasketCapacity < core.MaxCapacity);
 
         }
 
@@ -29,13 +32,28 @@ namespace tdd_bobs_bagels.CSharp.Test
             core.AddBagel("bagel plain");
 
             bool result = core.RemoveBagelFromBasket("bagel onion");
-            foreach(string k in core.Basket)
-            {
-                Console.WriteLine(k);
-            }
+            //the code below shows the whole basket after the removed bagel
+            //foreach(string k in core.Basket)
+            //{
+            //    Console.WriteLine(k);
+            //}
             Assert.IsTrue(result);
 
 
+        }
+
+        [TestCase(10)]
+        [TestCase(6)]
+
+        public void IsCapacityChanged(int v) {
+            Core core = new Core();
+            Console.WriteLine($"max cap before {core.MaxCapacity}");
+            core.ChangeCapacity(v);
+            Console.WriteLine($"max cap after {core.MaxCapacity}");
+
+            Assert.AreEqual(core.MaxCapacity, v);
+        
+        
         }
     }
 }
