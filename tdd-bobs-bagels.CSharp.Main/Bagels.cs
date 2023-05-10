@@ -23,6 +23,11 @@ namespace tdd_bobs_bagels.CSharp.Main
             return this.BagelBasket.Remove(bagel);
         }
 
+        public void SetBagelBasketMax(int value)
+        {
+            BagelBasketMax = value;
+        }
+
         public List<string> BagelBasket { get; set; } = new List<string>();
         public int BagelBasketMax { get; set; } = 3;
         public bool BagelBasketFull

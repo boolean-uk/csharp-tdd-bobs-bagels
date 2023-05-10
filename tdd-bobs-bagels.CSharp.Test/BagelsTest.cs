@@ -62,5 +62,23 @@ namespace tdd_bobs_bagels.CSharp.Test
             Assert.IsTrue(bagels.BagelBasketFull);
         }
 
+        [TestCase(5)]
+        public void ChangeBasketMax(int value) 
+        {
+            Bagels bagels = new Bagels();
+            string bagel1 = "regular";
+            string bagel2 = "cheese";
+            string bagel3 = "everything";
+            string bagel4 = "sesame";
+
+            bagels.AddBagel(bagel1);
+            bagels.AddBagel(bagel2);
+            bagels.AddBagel(bagel3);
+            bagels.AddBagel(bagel4);
+            bagels.SetBagelBasketMax(value);
+
+            Assert.AreEqual(bagels.BagelBasketMax, 5);
+        }
+
     }
 }
