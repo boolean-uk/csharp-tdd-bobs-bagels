@@ -14,9 +14,18 @@ namespace tdd_bobs_bagels.CSharp.Main
             basket.Add(item);
         }
 
-        public void RemoveProduct(string item)
+        public string RemoveProduct(string item)
         {
-            basket.Remove(item);
+            if (basket.Contains(item)) 
+            {
+                basket.Remove(item);
+                return $"{item} removed";
+            } 
+            else
+            {
+                return "Item not found";
+            }
+
         }
     }
 }

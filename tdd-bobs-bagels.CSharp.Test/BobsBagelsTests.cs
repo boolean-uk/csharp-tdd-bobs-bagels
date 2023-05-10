@@ -33,6 +33,17 @@ namespace tdd_bobs_bagels.CSharp.Test
             _basket.AddProduct("Salmon bagel");
             _basket.RemoveProduct("Salmon bagel");
             Assert.IsFalse(_basket.basket.Contains("Salmon bagel"));
+            Assert.AreEqual(_basket.RemoveProduct("Cheese bagel"), "Cheese bagel removed");
+
+        }
+        [Test]
+        public void TestRemoveNonExistingBagel()
+        {
+            //I'd like to know if I try to remove an item that doesn't exist in my basket.
+            BobsBagels _basket = new BobsBagels();
+            _basket.AddProduct("Cheese bagel");
+            _basket.RemoveProduct("Cheese bagel");
+            Assert.AreEqual(_basket.RemoveProduct("Cheese bagel"), "Item not found");
         }
 
     }
