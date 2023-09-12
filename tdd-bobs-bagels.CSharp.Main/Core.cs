@@ -47,9 +47,12 @@ namespace tdd_bobs_bagels.CSharp.Main
             return items.Count == capacity;
         }
 
-        public void SetCapacity(int newCapacity)  // set capacity to 0 if negative
+        public void SetCapacity(int newCapacity)
         {
             capacity = Math.Max(newCapacity, 0);
+            
+            // example for Enumerable.Max instead of Math.Max method
+            // capacity = (new[] { newCapacity, 0}).Max();
         }
     }
 }
