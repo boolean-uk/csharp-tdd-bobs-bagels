@@ -28,7 +28,7 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool Remove(string bagel)
         {
-            throw new NotImplementedException();
+            return _basket.Remove(bagel);
         }
 
         public int BagelsNum { get => _basket.Count; }
