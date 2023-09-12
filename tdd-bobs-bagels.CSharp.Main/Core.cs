@@ -20,6 +20,8 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool Add(string bagel)
         {
+            if (_basket.Count == _capacity)
+                return false;
             _basket.Add(bagel);
             return true;
         }
