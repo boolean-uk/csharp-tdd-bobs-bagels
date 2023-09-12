@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,9 +9,14 @@ namespace tdd_bobs_bagels.CSharp.Main
 {
     public class Core
     {
-        public List<string> items = new List<string>();
-        public int capacity = 5; 
+        public List<string> items;
+        public int capacity; 
 
+        public Core(int initialCapacity =5) // added constructor for capacity and item list
+        {
+            capacity = initialCapacity;
+            items = new List<string>();
+        }
         public bool AddBagel(string bagelType)
         {
             if(items.Count < capacity)
