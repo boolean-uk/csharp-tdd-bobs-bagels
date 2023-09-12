@@ -25,5 +25,12 @@ namespace tdd_bobs_bagels.CSharp.Main
             _basket.Add(bagel);
             return true;
         }
+
+        public bool Remove(string bagel)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int BagelsNum { get => _basket.Count; }
     }
 }
