@@ -13,21 +13,32 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool AddBagel(string bagelType)
         {
-            return false; 
+            if(items.Count < capacity)
+            {
+                items.Add(bagelType);
+                return true;
+            }
+            return false;
         }
 
         public bool RemoveBagel(string bagelType)
         {
+            if (items.Contains(bagelType))
+            {
+                items.Remove(bagelType);
+                return true;
+            }
             return false;
         }
 
         public bool IsFull()
         {
-            return false;
+            return items.Count == capacity;
         }
 
         public void SetCapacity(int newCapacity)
         {
+            capacity = newCapacity;
         }
     }
 }
