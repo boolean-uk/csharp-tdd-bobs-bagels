@@ -9,8 +9,8 @@ namespace tdd_bobs_bagels.CSharp.Main
 {
     public class Core
     {
-        public List<string> items;
-        public int capacity; 
+        private List<string> items; // private for encap
+        private int capacity; // private for encap
 
         public Core(int initialCapacity =5) // added constructor for capacity and item list
         {
