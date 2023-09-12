@@ -33,7 +33,9 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool ChangeCapacity(int capacity, bool isManager)
         {
-            throw new NotImplementedException();
+            if (!isManager) return false;
+            _capacity = capacity;
+            return true;
         }
 
         public int BagelsNum { get => _basket.Count; }
