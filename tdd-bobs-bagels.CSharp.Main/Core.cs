@@ -28,12 +28,19 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public string RemoveBagel(List<string> basket, string bagel)
         {
-            throw new NotImplementedException();
+            this.basket = basket;
+            if (basket.Contains(bagel))
+            {
+                basket.Remove(bagel);
+                return "bagel removed!";
+            }
+            return "you haven't added this one!";
         }
 
         public void UpdateCapacity(List<string> basket, int newcap)
         {
-            throw new NotImplementedException();
+            _isManager = true;
+            capacity = newcap;
         }
     }
 }

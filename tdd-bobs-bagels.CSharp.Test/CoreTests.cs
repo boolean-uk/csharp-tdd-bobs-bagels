@@ -50,7 +50,7 @@ namespace tdd_bobs_bagels.CSharp.Test
             core.UpdateCapacity(core.basket, newcap);
 
             //assert
-            Assert.IsTrue(core.basket.Contains(bagel3));
+            Assert.IsTrue(core.basket.Capacity==newcap);
         }
 
 
