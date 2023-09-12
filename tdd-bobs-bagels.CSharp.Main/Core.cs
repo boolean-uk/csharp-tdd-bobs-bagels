@@ -31,6 +31,13 @@ namespace tdd_bobs_bagels.CSharp.Main
             return _basket.Remove(bagel);
         }
 
+        public bool ChangeCapacity(int capacity, bool isManager)
+        {
+            throw new NotImplementedException();
+        }
+
         public int BagelsNum { get => _basket.Count; }
+
+        public int Capacity { get => _capacity; }
     }
 }

@@ -46,5 +46,17 @@ namespace tdd_bobs_bagels.CSharp.Test
             Assert.IsFalse(basket.Add("salt bagel"));
         }
 
+        // 4. change the capacity of baskets (As a Bob's Bagels manager)
+        [Test]
+        public void ChangeCapacityOfBasketTest()
+        {
+            Basket basket = initialisedBasket();
+            
+            basket.ChangeCapacity(4, true);
+
+            Assert.IsTrue(basket.Capacity == 4);
+            Assert.IsTrue(basket.Add("salt bagel"));
+        }
+
     }
 }
