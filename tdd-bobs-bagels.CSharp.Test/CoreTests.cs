@@ -10,7 +10,7 @@ namespace tdd_bobs_bagels.CSharp.Test
         public void AddABagelToBasketTest()
         {
             Basket basket = new Basket();
-            Assert.IsTrue(basket.add("plain bagel"));
+            Assert.IsTrue(basket.Add("plain bagel"));
         }
     }
 }

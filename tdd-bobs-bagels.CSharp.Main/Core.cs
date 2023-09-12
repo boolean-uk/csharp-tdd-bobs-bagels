@@ -18,9 +18,10 @@ namespace tdd_bobs_bagels.CSharp.Main
         private int _capacity = 3;
         private List<string> _basket = new List<string>();
 
-        public bool add(string bagel)
+        public bool Add(string bagel)
         {
-            throw new NotImplementedException();
+            _basket.Add(bagel);
+            return true;
         }
     }
 }
