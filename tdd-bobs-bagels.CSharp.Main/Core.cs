@@ -16,11 +16,19 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public Core(int initialCapacity =5) // added constructor for capacity and item list
         {
-            capacity = initialCapacity;
+            capacity = Math.Max(initialCapacity, 0); // used https://learn.microsoft.com/en-us/dotnet/api/system.math.max?view=net-7.0 to prevent negative capacity
             items = new List<string>();
         }
         public bool AddBagel(string bagelType)
         {
+            if(string.IsNullOrEmpty(bagelType))
+            {
+                return false;
+            }
+            if (items.Contains(bagelType))    // preventing adding duplicates
+            {
+                return false;
+            }
             if(items.Count < capacity)
             {
                 items.Add(bagelType);
@@ -31,12 +39,7 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool RemoveBagel(string bagelType)
         {
-            if (items.Contains(bagelType))
-            {
-                items.Remove(bagelType);
-                return true;
-            }
-            return false;
+            return items.Contains(bagelType) && items.Remove(bagelType);
         }
 
         public bool IsFull()
@@ -44,9 +47,9 @@ namespace tdd_bobs_bagels.CSharp.Main
             return items.Count == capacity;
         }
 
-        public void SetCapacity(int newCapacity)
+        public void SetCapacity(int newCapacity)  // set capacity to 0 if negative
         {
-            capacity = newCapacity;
+            capacity = Math.Max(newCapacity, 0);
         }
     }
 }

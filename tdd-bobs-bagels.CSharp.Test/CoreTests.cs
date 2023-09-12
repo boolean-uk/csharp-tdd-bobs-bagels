@@ -95,7 +95,7 @@ namespace tdd_bobs_bagels.CSharp.Test
         [Test]
         public void CantAddNullorEmptyStringBagel()
         {
-            bool succesNull = _core.AddBagel(null);
+            bool succesNull = _core.AddBagel(null!);
             bool succesEmpty = _core.AddBagel(string.Empty);
             Assert.IsFalse(succesNull);
             Assert.IsFalse(succesEmpty);
@@ -114,7 +114,7 @@ namespace tdd_bobs_bagels.CSharp.Test
         {
             _core.AddBagel("Argus Filch");
             bool succes = _core.AddBagel("Argus Filch");
-            Assert.IsTrue(succes);
+            Assert.IsFalse(succes);
         }
 
         [Test]
