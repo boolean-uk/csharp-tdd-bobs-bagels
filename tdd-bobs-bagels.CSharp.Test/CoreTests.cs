@@ -68,5 +68,13 @@ namespace tdd_bobs_bagels.CSharp.Test
 
             Assert.IsTrue(basket.Capacity == 3);
         }
+
+        // 5. know if I try to remove an item that doesn't exist in my basket
+        [Test]
+        public void RemoveANonExistingBagelFromBasketTest()
+        {
+            Basket basket = initialisedBasket();
+            Assert.IsFalse(basket.Remove("salt bagel"));
+        }
     }
 }
