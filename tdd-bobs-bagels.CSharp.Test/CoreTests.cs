@@ -91,5 +91,57 @@ namespace tdd_bobs_bagels.CSharp.Test
             bool removed = _core.RemoveBagel("Lilly Potter");
             Assert.IsFalse(removed);
         }
+
+        [Test]
+        public void CantAddNullorEmptyStringBagel()
+        {
+            bool succesNull = _core.AddBagel(null);
+            bool succesEmpty = _core.AddBagel(string.Empty);
+            Assert.IsFalse(succesNull);
+            Assert.IsFalse(succesEmpty);
+        }
+
+        [Test]
+        public void NotPossibleToSetNegativeCapacity()
+        {
+            _core.SetCapacity(-5);
+            bool canIAdd = _core.AddBagel("Vernon Dursley");
+            Assert.IsFalse(canIAdd);
+        }
+
+        [Test]
+        public void CannotAddDuplicatesBagel()
+        {
+            _core.AddBagel("Argus Filch");
+            bool succes = _core.AddBagel("Argus Filch");
+            Assert.IsTrue(succes);
+        }
+
+        [Test]
+        public void IsBasketAllreadyFullBefore()
+        {
+            Assert.IsFalse(_core.IsFull());
+        }
+
+        [Test]
+        public void CheckIfBasketIsNotFullAfterYouRemovebagel()
+        {
+            _core.SetCapacity(1);
+            _core.AddBagel("");
+            _core.RemoveBagel("");
+            Assert.IsFalse(_core.IsFull());
+        }
+
+        [Test]
+        public void CanWeAddMoreAfterIncreasingCapacity()
+        {
+            _core.SetCapacity(3);
+            _core.AddBagel("The first");
+            _core.AddBagel("The second");
+            _core.AddBagel("The third");
+            _core.SetCapacity(4);
+            bool success = _core.AddBagel("The fourth");
+            Assert.IsTrue(success);
+        }
     }
 }
