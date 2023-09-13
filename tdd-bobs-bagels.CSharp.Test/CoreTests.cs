@@ -37,7 +37,7 @@ namespace tdd_bobs_bagels.CSharp.Test
             core.RemoveBagel(core.basket, bagel3);
 
             //assert
-            Assert.IsTrue(core.basket.Contains(bagel3));
+            Assert.IsFalse(core.basket.Contains(bagel3));
         }
 
         [Test]
@@ -50,7 +50,7 @@ namespace tdd_bobs_bagels.CSharp.Test
             core.UpdateCapacity(core.basket, newcap);
 
             //assert
-            Assert.IsTrue(core.basket.Capacity==newcap);
+            Assert.IsTrue(core.capacity==newcap);
         }
 
 
