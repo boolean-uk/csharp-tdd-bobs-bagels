@@ -33,6 +33,14 @@ namespace tdd_bobs_bagels.CSharp.Main
             }
         }
 
-        
+        private string secretCode { get; } = "thesecretcode";
+        public int EditMaximum(string managerCode, int newCapacity)
+        {
+            if (managerCode == secretCode)
+            {
+                MaxCapacity = newCapacity;
+            }
+            return MaxCapacity;
+        }
     }
 }

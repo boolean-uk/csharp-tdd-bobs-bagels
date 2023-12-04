@@ -54,6 +54,8 @@ namespace tdd_bobs_bagels.CSharp.Test
             Assert.That(result, Is.EqualTo(expected));
 
         }
+
+        [Test]
         public void Test_Four() //Manager increases (changes) max capacity
         {
             //arrange
@@ -64,7 +66,7 @@ namespace tdd_bobs_bagels.CSharp.Test
             string expected = "Bagel added";
 
             //act
-            core.EditMaximum("Manager_secret_passcode", 5); //change capacity to 5
+            core.EditMaximum("thesecretcode", 5); //change capacity to 5
             string result = core.AddBagel("Special manager bagel");
 
             //assert
