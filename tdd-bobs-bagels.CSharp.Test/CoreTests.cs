@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System.Reflection.Emit;
+using System.Security.Principal;
 using tdd_bobs_bagels.CSharp.Main;
 
 
@@ -54,7 +55,21 @@ namespace tdd_bobs_bagels.CSharp.Test
 
         }
         public void Test_Four() //Manager increases (changes) max capacity
-        { }
+        {
+            //arrange
+            Core core = new Core();
+            core.AddBagel("Sesame bagel");
+            core.AddBagel("Blueberry bagel");
+            core.AddBagel("Montreal bagel");
+            string expected = "Bagel added";
+
+            //act
+            core.EditMaximum("Manager_secret_passcode", 5); //change capacity to 5
+            string result = core.AddBagel("Special manager bagel");
+
+            //assert
+            Assert.That(result, Is.EqualTo(expected));
+        }
         public void Test_Five() //Remove bagel that doesn't exist
         { }
 
