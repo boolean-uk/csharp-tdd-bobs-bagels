@@ -36,6 +36,7 @@ namespace tdd_bobs_bagels.CSharp.Test
             Assert.That(core.Basket.Contains("Sesame bagel"), Is.False);
         }
 
+        [Test]
         public void Test_Three() //Add bagel when basket is full
         {
             //arrange
