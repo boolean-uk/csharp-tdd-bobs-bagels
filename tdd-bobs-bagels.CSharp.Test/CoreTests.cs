@@ -72,8 +72,23 @@ namespace tdd_bobs_bagels.CSharp.Test
             //assert
             Assert.That(result, Is.EqualTo(expected));
         }
+
+        [Test]
         public void Test_Five() //Remove bagel that doesn't exist
-        { }
+        {
+            //arrange
+            Core core = new Core();
+            core.AddBagel("Sesame bagel");
+            core.AddBagel("Blueberry bagel");
+            core.AddBagel("Montreal bagel");
+            string expected = "You can't remove a bagel that doesn't exist!";
+
+            //act
+            string result = core.RemoveBagel("Grilled cheed bagel");
+
+            //assert
+            Assert.That(result, Is.EqualTo(expected)); 
+        }
 
     }
 }
