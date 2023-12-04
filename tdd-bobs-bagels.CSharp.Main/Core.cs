@@ -25,11 +25,15 @@ namespace tdd_bobs_bagels.CSharp.Main
             
         }
 
-        public void RemoveBagel(string bagel)
+        public string RemoveBagel(string bagel)
         {
             if (Basket.Contains(bagel))
             {
                 Basket.Remove(bagel);
+                return "Bagel removed";
+            } else
+            {
+                return "You can't remove a bagel that doesn't exist!";
             }
         }
 
