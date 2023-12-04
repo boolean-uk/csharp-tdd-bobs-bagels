@@ -8,6 +8,7 @@ namespace tdd_bobs_bagels.CSharp.Test
     [TestFixture]
     public class CoreTests
     {
+        [Test]
         public void Test_One() //Add a bagel to the basket
         {
             //arrange
@@ -17,9 +18,10 @@ namespace tdd_bobs_bagels.CSharp.Test
             core.AddBagel("Sesame bagel");
 
             //assert
-            Assert.IsTrue(core.Basket.Contains("Sesame bagel"));
+            Assert.That(core.Basket.Contains("Sesame bagel"));
         }
 
+        [Test]
         public void Test_Two() //Remove a bagel from the basket
         {
             //arrange
