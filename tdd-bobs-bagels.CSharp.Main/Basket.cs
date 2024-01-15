@@ -8,6 +8,11 @@ namespace tdd_bobs_bagels.CSharp.Main
 {
     public class Basket
     {
+        public List<string> content = new List<string>();
 
+        public void add(string bagel)
+        {
+            content.Add(bagel);
+        }
     }
 }
