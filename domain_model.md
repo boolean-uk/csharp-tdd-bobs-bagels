@@ -10,6 +10,6 @@
 | | | Failed to add bagel to basket | false |
 | | `RemoveBagelFromBasket(string bagelType)` | Remove bagel of provided type from basket (2) | true |
 | | | Could not remove, as no bagel of that type was in the basket (5) | false |
-| | `BasketHasRoom()` | Check that there is room for more bagels (3) | true |
+| | `HasRoom()` | Check that there is room for more bagels (3) | true |
 | | | Basket is overflowing and cant hold anymore (3) | false |
 | | `SetBasketSize(int newSize)` | Change the maximum bagel capacity of the basket (4) | int |
