@@ -77,5 +77,19 @@ namespace csharp_tdd_bobs_bagels.tests
             Assert.That(result, Is.True);
             Assert.That(capacity, Is.EqualTo(newCapacity));
         }
+
+        [Test]
+
+        public void RemoveBagelThatDoesNotExist()
+        {
+            // arrange
+            Basket core = new Basket();
+
+            // assert
+            bool result = core.Remove("donut");
+            
+            // act
+            Assert.That(result, Is.False);            
+        }
     }
 }
