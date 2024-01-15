@@ -8,8 +8,24 @@ public class Tests
     }
 
     [Test]
-    public void Test1()
+    public void testAdd()
     {
-        Assert.Pass();
+        //Arrange
+        Basket basket = new Basket();
+
+
+        //Act
+        string bagel1 = "bread";
+        string bagel2 = "crossiant";
+        basket.Add(bagel1);
+        basket.Add(bagel2);
+        List<string> testResult = new List<string>() { 
+            bagel1, bagel2
+        };
+
+
+        //Assert
+        Assert.Equals(testResult, basket._basket);
+
     }
 }
