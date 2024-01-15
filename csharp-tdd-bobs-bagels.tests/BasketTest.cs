@@ -29,6 +29,7 @@ namespace csharp_tdd_bobs_bagels.tests
             Assert.That(result==true);
         }
 
+        [Test]
         public void Test2()
         {
             //  Arrange - set up test values
@@ -42,7 +43,7 @@ namespace csharp_tdd_bobs_bagels.tests
             //  Act - use the fucntion we want to test
 
             //  Assert - check the results
-            Assert.That(result == true);
+            Assert.That(result == false);
         }
     }
 }
