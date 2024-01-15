@@ -26,6 +26,14 @@ namespace tdd_bobs_bagels.CSharp.Main
         }
         public bool removeBagel(string type)
         {
+            foreach (string item in content)
+            {
+                if (item.Contains(type))
+                {
+                    content.Remove(item);
+                    return true;
+                }
+            }
             return false;
         }
         public int changeCapacity(int currentSize)
