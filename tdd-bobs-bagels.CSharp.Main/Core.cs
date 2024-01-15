@@ -10,9 +10,9 @@ namespace tdd_bobs_bagels.CSharp.Main
     {
         private List<Bagel> _basket = new List<Bagel>();
         public List<Bagel> Basket { get {  return _basket; } }
-        public void Add(Bagel bagel1)
+        public void Add(Bagel bagel)
         {
-            throw new NotImplementedException();
+            _basket.Add(bagel);
         }
     }
 }
