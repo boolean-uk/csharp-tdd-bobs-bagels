@@ -42,4 +42,21 @@ public class Tests
         core.Add(Bagel.plain);
         Assert.IsFalse(core.Add(Bagel.frenchToast));
     }
+
+    [Test]
+    public void changeCapacityLowerTest()
+    {
+        core.changeCapacity(2);
+        Assert.IsFalse(core.Add(Bagel.frenchToast));
+    }
+
+    [Test]
+    public void changeCapacityUpperTest() 
+    {
+        core.changeCapacity(5);
+        core.Add(Bagel.egg);
+        core.Add(Bagel.pumpernickle);
+        core.Add(Bagel.blueberryChocolateChip);
+        Assert.IsFalse(core.Add(Bagel.everything));
+    }
 }
