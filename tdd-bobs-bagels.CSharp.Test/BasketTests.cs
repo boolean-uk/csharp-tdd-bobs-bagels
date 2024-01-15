@@ -46,7 +46,7 @@ namespace tdd_bobs_bagels.CSharp.Test
             _basket.Add("cream cheese bagel");
             string result = _basket.Remove("cream cheese bagel");
 
-            Assert.AreEqual(result, "cream cheese bagel removed from your basket")
+            Assert.AreEqual(result, "cream cheese bagel removed from your basket");
         }
 
         //input "cream cheese bagel" ==> "Cannot remove from basket since vegan bagel was not in your basket"
@@ -56,7 +56,7 @@ namespace tdd_bobs_bagels.CSharp.Test
             _basket.Add("cream cheese bagel");
             string result = _basket.Remove("vegan bagel");
 
-            Assert.AreEqual(result, "Cannot remove from basket since vegan bagel was not in your basket")
+            Assert.AreEqual(result, "Cannot remove from basket since vegan bagel was not in your basket");
         }
 
         //input 5 ==> "New basket capacity is 5"
