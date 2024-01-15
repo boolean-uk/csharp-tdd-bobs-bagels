@@ -75,4 +75,13 @@ public class Tests
         Assert.That(ex.Message == "No bagel here matches that request");
     }
 
+    [Test]
+    public void TestExpandBasket()
+    {
+        Basket basket = new Basket(4);
+        basket.ExpandBasket(6);
+
+        Assert.That(basket.BasketSize == 10);
+    }
+
 }
