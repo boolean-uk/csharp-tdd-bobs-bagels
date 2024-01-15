@@ -40,4 +40,23 @@ public class Tests
 
     }
 
+    [Test]
+
+    public void TestRemove()
+    {
+        Basket basket = new Basket(4);
+
+        Bagel bagel1 = new Bagel("Everything");
+        Bagel bagel2 = new Bagel("Sesame");
+        Bagel bagel3 = new Bagel("Lox");
+
+        basket.AddToBasket(bagel1);
+        basket.AddToBasket(bagel2);
+        basket.AddToBasket(bagel3);
+
+        basket.RemoveFromBasket(bagel3);
+
+        Assert.That(basket.Bagels.Count, Is.EqualTo(2));
+    }
+
 }
