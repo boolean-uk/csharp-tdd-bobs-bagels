@@ -10,12 +10,13 @@ namespace tdd_bobs_bagels.CSharp.Test
         public BasketTests()
         {
             _basket = new Basket(6);
-            _basket.addBagel("poppy seed");
-            _basket.addBagel("cream cheese");
-            _basket.addBagel("smoked ham");
-            _basket.addBagel("bacon");
-            _basket.addBagel("standard");
-            _basket.removeBagel("bacon");
+            _basket.addBagel("poppy seed"); //1
+            _basket.addBagel("cream cheese"); //2
+            _basket.addBagel("smoked ham"); //3
+            _basket.addBagel("bacon"); //4
+            _basket.addBagel("standard"); //5
+            _basket.addBagel("everyting"); //6
+            _basket.addBagel("chicken hickory"); //7 should not be added
         }
         [Test]
         public void addBagelTest()
@@ -25,8 +26,14 @@ namespace tdd_bobs_bagels.CSharp.Test
             Assert.IsFalse(_basket.content.Contains("sesame seed"));
         }
         [Test]
+        public void doesNotExceedTest()
+        {
+            Assert.IsFalse(_basket.content.Contains("chicken hickory"));
+        }
+        [Test]
         public void removeBagelTest()
         {
+            _basket.removeBagel("bacon");
             Assert.IsTrue(_basket.content.Contains("poppy seed"));
             Assert.IsFalse(_basket.content.Contains("bacon"));
         }
