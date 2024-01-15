@@ -29,5 +29,12 @@ namespace tdd_bobs_bagels.CSharp.Test
             _basket.Order("Plain Bagel");
             Assert.That(_basket.Remove("Plain Bagel"), Is.True);
         }
+
+        [Test]
+        public void ChangeCapacityTest()
+        {
+            _basket.Capacity(10);
+            Assert.That(_basket.Capacity, Is.EqualTo(10));
+        }
     }
 }

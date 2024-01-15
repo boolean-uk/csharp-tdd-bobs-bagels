@@ -10,6 +10,11 @@ namespace tdd_bobs_bagels.CSharp.Main
     {
         public List<string> Orders { get; set; } = new();
 
+        public bool Capacity(int v)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Order(string bagel)
         {
             Orders.Add(bagel);
