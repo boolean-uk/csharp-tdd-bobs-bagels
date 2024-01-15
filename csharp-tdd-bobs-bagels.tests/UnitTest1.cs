@@ -1,3 +1,5 @@
+using tdd_bobs_bagels.CSharp.Main;
+
 namespace csharp_tdd_bobs_bagels.tests;
 
 public class Tests
@@ -8,8 +10,13 @@ public class Tests
     }
 
     [Test]
-    public void Test1()
+    public void TestAdd()
     {
-        Assert.Pass();
+        Core core = new Core();
+
+        core.Add("Plain");
+
+        Assert.That(core.Bagels.Count, Is.EqualTo(1));
+        Assert.That(core.Bagels[0], Is.EqualTo("Plain"));
     }
 }
