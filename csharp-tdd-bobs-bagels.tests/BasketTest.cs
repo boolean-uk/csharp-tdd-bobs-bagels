@@ -4,36 +4,58 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Classes;
+using tdd_bobs_bagels.CSharp.Main.Classes;
 
 namespace csharp_tdd_bobs_bagels.tests
 {
     [TestFixture]
     internal class BasketTest
     {
+        private Basket _basket;
+        private Bagel _bagel;
+
+        [SetUp]
+        public void SetUp()
+        {
+            _basket = new Basket();
+            _bagel = new Bagel("Test");
+            _basket.Add(_bagel);
+        }
+
+
         [Test]
         public void AddTest()
         {
-            Basket basket = new Basket();
+            Assert.That(_basket.Bagels.First(), Is.EqualTo(_bagel));
+        }
 
-
-
-            Assert.Pass();
+        [Test]
+        public void AddToFullCartTest() 
+        { 
+            _basket.Add(_bagel);
+            _basket.Add(_bagel);
+            Assert.That(_basket.Add(_bagel), Is.EqualTo("Basket is full"));
         }
 
         [Test]
         public void RemoveTest()
         {
-            Basket basket = new Basket();
+            _basket.Remove("test");
+            Assert.That(_basket.Bagels, Is.EqualTo(new Basket().Bagels));
+        }
 
-            Assert.Pass();
+        [Test]
+        public void RemoveNonexistantTest()
+        {
+            Assert.That(_basket.Remove("test1"), Is.EqualTo("Could not find given bagel type"));
         }
 
         [Test]
         public void SetCapacityTest()
         {
-            Basket basket = new Basket();
+            _basket.SetCapacity(1);
 
-            Assert.Pass();
+            Assert.That(_basket.Capacity, Is.EqualTo(1));
         }
     }
 }

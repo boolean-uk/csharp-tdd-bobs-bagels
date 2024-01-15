@@ -14,6 +14,7 @@ namespace Classes
         private List<Bagel> _bagels = new List<Bagel>();
 
         public List<Bagel> Bagels { get => _bagels; }
+        public int Capacity { get => _capacity; }
 
         public Basket() { }
 
@@ -23,7 +24,7 @@ namespace Classes
             return "";
         }
 
-        public string Remove(Bagel bagel) 
+        public string Remove(string type) 
         {
 
             return "";
