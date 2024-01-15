@@ -1,3 +1,9 @@
+using tdd_bobs_bagels.CSharp.Main;
+using NUnit.Framework;
+using System.Collections.Generic;
+using System.Numerics;
+using System.Threading.Tasks;
+
 namespace csharp_tdd_bobs_bagels.tests;
 
 public class Tests
@@ -8,8 +14,10 @@ public class Tests
     }
 
     [Test]
-    public void Test1()
+    public void addTest()
     {
+        Core core = new Core();
+        core.add("bagel");
         Assert.Pass();
     }
 }

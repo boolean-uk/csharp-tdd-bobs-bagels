@@ -6,7 +6,7 @@ I'd like to add a specific type of bagel to my basket.``
 
 | Classes         | Methods                                     | Scenario                    | Outputs |
 |-----------------|---------------------------------------------|-----------------------------|---------|
-| `Core`		  | `add(string bagel)`							| Adds bagel to basket		  | bool    |
+| `Core`		  | `add(string bagel)`							| Adds bagel to basket		  | void    |
 
 ``
 2.
