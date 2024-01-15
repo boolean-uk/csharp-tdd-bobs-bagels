@@ -44,5 +44,23 @@ namespace csharp_tdd_bobs_bagels.tests
             Assert.That(result, Is.True);
             Assert.That(length, Is.EqualTo(0));
         }
+
+        [Test]
+        public void Overfill() 
+        {           
+            // arrange
+            Basket core = new Basket();
+            string[] bagels = { "type1", "type2", "type3", "type4", "type5" };
+            core.basket.AddRange(bagels);
+            string bagel = "Donut bagel";
+
+            // act
+            bool result = core.Add(bagel);
+
+            // assert
+            Assert.That(result, Is.False);
+
+
+        }
     }
 }
