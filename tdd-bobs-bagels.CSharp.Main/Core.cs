@@ -13,16 +13,26 @@ public class Core
 
     public bool add(string bagel)
     {
-        throw new NotImplementedException();
+        if (bagels.Count < capacity)
+        {
+            bagels.Add(bagel);
+            return true;
+        }
+        return false;
     }
 
     public bool remove(string bagel)
     {
-        throw new NotImplementedException();
+        if (bagels.Contains(bagel))
+        {
+            bagels.Remove(bagel);
+            return true;
+        }
+        return false;
     }
 
-    public void setCapacity(int capasity)
+    public void setCapacity(int newCapacity)
     {
-        throw new NotImplementedException();
+        capacity = newCapacity;
     }
 }
