@@ -1,3 +1,5 @@
+using tdd_bobs_bagels.CSharp.Main;
+
 namespace csharp_tdd_bobs_bagels.tests;
 
 public class Tests
@@ -17,7 +19,7 @@ public class Tests
         //Act
         string bagel1 = "bread";
         string bagel2 = "crossiant";
-        basket.Add(bagel1);
+        basket.Add("bread");
         basket.Add(bagel2);
         List<string> testResult = new List<string>() { 
             bagel1, bagel2
@@ -25,7 +27,7 @@ public class Tests
 
 
         //Assert
-        Assert.Equals(testResult, basket._basket);
+        Assert.AreEqual(testResult, basket._basket);
 
     }
 }
