@@ -36,9 +36,13 @@ namespace tdd_bobs_bagels.CSharp.Test
             _core.Add("A");
             _core.Add("B");
 
-            _core.Remove("A");
+            _core.Remove("D");
 
             List<string> l1 = _core._basket;
+
+            Assert.That(2, Is.EqualTo(l1.Count));
+
+            _core.Remove("A");
 
             Assert.That(1, Is.EqualTo(l1.Count));
 
