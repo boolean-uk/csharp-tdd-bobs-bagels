@@ -8,5 +8,12 @@ namespace tdd_bobs_bagels.CSharp.Main
 {
     public class Core
     {
+        public List<string> Basket { get; set; }
+        public Core() 
+        {
+            Basket = new List<string>();
+        }
+
+
     }
 }
