@@ -55,4 +55,23 @@ public class Tests
 
         Assert.Throws<Exception>(() => core.Remove("Chocolate"));
     }
+
+    [Test]
+    public void IncreaseCapacity()
+    {
+        Core core = new Core();
+
+        core.Add("Plain");
+        core.Add("Sour-Dough");
+        core.Add("French");
+        core.Add("Cheese");
+        core.Add("Egg");
+
+        Assert.Throws<Exception>(() => core.Add("Chocolate"));
+
+        core.DoubleCapacity();
+        core.Add("Chocolate");
+
+        Assert.That(core.Bagels.Count, Is.EqualTo(6));
+    }
 }
