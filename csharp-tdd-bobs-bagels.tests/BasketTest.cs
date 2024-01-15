@@ -15,16 +15,18 @@ namespace csharp_tdd_bobs_bagels.tests
             _basket = new Basket();
         }
 
+
         [Test]
         public void Test1()
         {
             //  Arrange - set up test values
-
+            Bagle bagle = new Bagle("bagle");
+            bool result = _basket.Add(bagle);
 
             //  Act - use the fucntion we want to test
 
             //  Assert - check the results
-            Assert.That(false==true);
+            Assert.That(result==true);
         }
     }
 }

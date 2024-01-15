@@ -14,5 +14,10 @@ namespace tdd_bobs_bagels.CSharp.Main
             _bagles = new List<Bagle>();
         } 
 
+        public bool Add(Bagle bagle)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
