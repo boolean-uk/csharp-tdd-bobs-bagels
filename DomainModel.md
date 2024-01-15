@@ -27,16 +27,17 @@ I'd like to know if I try to remove an item that doesn't exist in my basket.
 
 Class Basket:
     Properties:
-        Public Dictionary <string, string> availableBagles
-        Public List <string> bagelsInBasket
-        Public int basketCapacity
+        Public Dictionary <string bagelId, string bagelName> BagelsMenu
+        private List <string bagelId> BagelsInBasket
+        private int BasketCapacity
     Methods:
-        string Add(string bagelname)
-            returns "{bagelname} added to your basket" if bagelname exists in availableBagles
-            returns "{bagelname} is not on our menu" if bagelname does not exist in availableBagles
-            returns "Could not add {bagelname}, Your basket is full" if bagelsInBasket.Count == basketCapacity
-        string Remove(string bagelname)
+        string Add(string bagelId)
+            returns "{bagelname} added to your basket" if bagelId exists in BagelsMenu
+            returns "{bagelId} is not a bagel type on our menu" if bagelId does not exist in BagelsMenu
+            returns "Your basket is full" if bagelsInBasket.Count == basketCapacity
+        string Remove(string bagelId)
             returns "{bagelname} removed from your basket" if bagelname exists in bagelsInBasket
-            returns "Cannot remove from basket since {bagelname} was not in your basket" if bagelname does not exist in bagelsInBasket
-        string UpdateCapacity (int newCapacity)
+            returns "Cannot remove from basket since that bagel was not in your basket" if bagelname does not exist in bagelsInBasket
+        string UpdateCapacity(int newCapacity)
             basketCapacity = newCapacity; Returns "New basket capacity is {newCapacity}"
+                if newCapacity < 1 return "basket capacity cannot be smaller than 1"
