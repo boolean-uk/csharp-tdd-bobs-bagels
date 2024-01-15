@@ -28,7 +28,7 @@ namespace tdd_bobs_bagels.CSharp.Test
         [Test]
         public void AddFullTest()
         {
-            _basket._capacity = 1;
+            _basket.Capacity = 1;
             _basket.AddBagel("blueberry");
             bool result = _basket.AddBagel("sourdough");
             Assert.IsFalse(result);
