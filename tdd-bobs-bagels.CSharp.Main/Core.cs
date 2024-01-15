@@ -26,6 +26,16 @@ namespace tdd_bobs_bagels.CSharp.Main
             BasketSize -= 1;
             
         }
+
+        public void RemoveFromBasket(Bagel bagel)
+        {
+            if (!Bagels.Exists(b => b.Equals(bagel)))
+            {
+                throw new ArgumentException("No bagel here matches that request");
+            }
+            Bagels.Remove(bagel);
+            BasketSize += 1;
+        }
         
         public List<Bagel> Bagels { get { return _bagels; } set { _bagels = value; } }
         public int BasketSize { get { return _basketSize; } set { _basketSize = value; } }
