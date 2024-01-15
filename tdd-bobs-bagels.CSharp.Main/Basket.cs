@@ -1,5 +1,6 @@
 ﻿
 
+
 namespace tdd_bobs_bagels.CSharp.Main
 {
     public class Basket
@@ -47,6 +48,11 @@ namespace tdd_bobs_bagels.CSharp.Main
         public bool IsFull()
         {
             return Items.Count >= _capacity;
+        }
+
+        public void ChangeBasketCapacity(int v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

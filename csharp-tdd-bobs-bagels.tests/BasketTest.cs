@@ -51,4 +51,21 @@ public class BasketTest
         Assert.IsFalse(shouldNotBeFull);
         Assert.IsTrue(shouldBeFull);
     }
+
+    [Test]
+    public void TestChangeBasketCapacity()
+    {
+        //setup
+        Basket basket = new(1);
+        basket.AddBagel("Bagel1");
+
+        //execute
+        bool shouldBeFull = basket.IsFull();
+        basket.ChangeBasketCapacity(3);
+        bool shouldNotBeFull = basket.IsFull();
+
+        //verify
+        Assert.IsTrue(shouldBeFull);
+        Assert.IsFalse(shouldNotBeFull);
+    }
 }
