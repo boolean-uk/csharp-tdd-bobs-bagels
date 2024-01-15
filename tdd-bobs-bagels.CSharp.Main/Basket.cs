@@ -28,7 +28,10 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public void Remove(string description) 
         {
-            
+            if (_bagels.Contains(description)) 
+            {
+                _basket.Remove(description);
+            }
         }
     }
 }
