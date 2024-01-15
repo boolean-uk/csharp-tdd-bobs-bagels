@@ -34,4 +34,13 @@ public class Tests
         Assert.That(core.Basket.Contains(bagel2));
         Assert.That(!core.Basket.Contains(bagel1));
     }
+
+    [Test]
+    public void ShouldChangeCapacity()
+    {
+        Core core = new Core();
+        core.ChangeCapacity(5);
+
+        Assert.That(core.Capacity == 5);
+    }
 }
