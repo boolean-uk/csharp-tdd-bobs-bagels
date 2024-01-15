@@ -52,7 +52,7 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public void ChangeBasketCapacity(int v)
         {
-            throw new NotImplementedException();
+            _capacity = v;
         }
     }
 }
