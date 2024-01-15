@@ -19,17 +19,40 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool AddBagelToBasket(string bagelType) 
         {
-            throw new NotImplementedException();
+            if (!HasRoom(1)) 
+            {
+                return false;
+            }
+
+            int numBefore = _basket.Count;
+            _basket.Add(bagelType);
+            int numAfter = _basket.Count;
+
+            if (numBefore < numAfter)
+            {
+                return true;
+            } else 
+            {
+                return false;
+            }
         }
 
         public bool RemoveBagelFromBasket(string bagelType) 
         {
-            throw new NotImplementedException();
+            return _basket.Remove(bagelType);
         }
 
-        public bool HasRoom()
+        public bool HasRoom(int offset = 0)
         {
-            throw new NotImplementedException();
+            if ((_basket.Count + offset) <= _maxBasketSize)
+            {
+                return true;
+            }
+            else 
+            {
+                Console.WriteLine("You can't get more bagels because the basket is full!");
+                return false;
+            }
         }
 
         /// <summary>
@@ -40,7 +63,13 @@ namespace tdd_bobs_bagels.CSharp.Main
         /// <exception cref="NotImplementedException"></exception>
         public int SetBasketSize(int newSize) 
         {
-            throw new NotImplementedException();
+            _maxBasketSize = newSize;
+            while (!HasRoom()) // Prune basket until it complies with the new size rules.
+            {
+                _basket.RemoveAt(new Random().Next(0, _basket.Count));
+            }
+
+            return _basket.Count;
         }
     }
 }
