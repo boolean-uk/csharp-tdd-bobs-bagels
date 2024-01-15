@@ -12,7 +12,7 @@ public class Tests
     [Test]
     public void TestAdd()
     {
-        Basket basket = new Basket();
+        Basket basket = new Basket(4);
         Bagel bagel = new Bagel("Everything");
 
         basket.AddToBasket(bagel);
@@ -22,7 +22,7 @@ public class Tests
     [Test]
     public void TestAddIfBasketIsFull() 
     {
-        Basket basket = new Basket();
+        Basket basket = new Basket(4);
         Bagel bagel1 = new Bagel("Everything");
         Bagel bagel2 = new Bagel("Everything");
         Bagel bagel3 = new Bagel("Everything");
@@ -35,8 +35,8 @@ public class Tests
         basket.AddToBasket(bagel4);
 
 
-        var ex = Assert.Throws<Exception>(() => basket.AddToBasket(bagel5));
-        Assert.Equals(ex.Message, "No more room in basket");
+        var ex = Assert.Throws<ArgumentException>(() => basket.AddToBasket(bagel5));
+        Assert.That(ex.Message == "No more room in basket");
 
     }
 
