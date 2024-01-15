@@ -42,4 +42,5 @@ So that I can maintain my sanity
 I'd like to know if I try to remove an item that doesn't exist in my basket.
 | Classes         | Methods                                     | Scenario                  | Outputs                               |
 |-----------------|---------------------------------------------|---------------------------|---------------------------------------|
-| `Basket`	        | `removeBagel(string type)`                | no such bagel             | false, print "No such bagel"          |
+| `Basket`	        | `removeBagel(string type)`                | bagel removed             | true                                  |
+|                 |                                             | no such bagel			    | false, print "No such bagel"		    |
