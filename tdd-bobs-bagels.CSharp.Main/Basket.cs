@@ -15,9 +15,9 @@ namespace tdd_bobs_bagels.CSharp.Main
             Orders.Add(bagel);
         }
 
-        public void Remove(string v)
+        public bool Remove(string bagel)
         {
-            throw new NotImplementedException();
+            return Orders.Remove(bagel);
         }
     }
 }

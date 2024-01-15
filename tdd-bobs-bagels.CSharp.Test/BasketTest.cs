@@ -27,8 +27,7 @@ namespace tdd_bobs_bagels.CSharp.Test
         public void RemoveBagelTest()
         {
             _basket.Order("Plain Bagel");
-            _basket.Remove("Plain Bagel");
-            Assert.That(_basket.Orders.Count == 0, Is.True);
+            Assert.That(_basket.Remove("Plain Bagel"), Is.True);
         }
     }
 }

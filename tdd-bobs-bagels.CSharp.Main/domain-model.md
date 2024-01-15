@@ -43,7 +43,7 @@ I'd like to know if I try to remove an item that doesn't exist in my basket.
 		<td></td>
 		<td><code>Remove(string bagel)</code></td>
 		<td>Remove a bagel from the basket</td>
-		<td>string</td>
+		<td>bool</td>
 	</tbody>
 	<tbody>
 		<td></td>
