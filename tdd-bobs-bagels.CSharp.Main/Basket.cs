@@ -22,6 +22,7 @@ namespace tdd_bobs_bagels.CSharp.Main
                 content.Add(type);
                 return true;
             }
+            Console.WriteLine("Capacity exceeded! Bagel not added");
             return false;
         }
         public bool removeBagel(string type)
