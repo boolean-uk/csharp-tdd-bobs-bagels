@@ -41,5 +41,10 @@ namespace tdd_bobs_bagels.CSharp.Main
                 throw new Exception("Bagel is not in basket");
             }
         }
+
+        public void DoubleCapacity()
+        {
+            _capacity *= 2;
+        }
     }
 }
