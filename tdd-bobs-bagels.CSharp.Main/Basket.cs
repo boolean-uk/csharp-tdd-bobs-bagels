@@ -14,5 +14,10 @@ namespace tdd_bobs_bagels.CSharp.Main
         {
             content.Add(bagel);
         }
+
+        public void remove(string bagel)
+        {
+            content.RemoveAll(x => x == bagel);
+        }
     }
 }
