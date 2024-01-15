@@ -36,7 +36,10 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public void Remove(string bagel)
         {
-            Bagels.Remove(bagel);
+            if (!Bagels.Remove(bagel))
+            {
+                throw new Exception("Bagel is not in basket");
+            }
         }
     }
 }
