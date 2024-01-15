@@ -8,6 +8,7 @@ namespace tdd_bobs_bagels.CSharp.Main
 {
     public class Basket
     {
+        private int capacity { get; set; } = 5; 
         public  List<string> basket { get; set; } = new List<string>();
         
         public bool Remove(string name) 
@@ -16,6 +17,16 @@ namespace tdd_bobs_bagels.CSharp.Main
             if (item != null)
             {
                 basket.Remove(item);
+                return true;
+            }
+            return false;
+        }
+
+        public bool Add(string name) 
+        {
+            if (basket.Count() < capacity) 
+            {
+                basket.Add(name);
                 return true;
             }
             return false;

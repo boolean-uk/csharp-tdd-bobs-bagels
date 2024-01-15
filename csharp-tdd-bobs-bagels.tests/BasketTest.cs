@@ -59,8 +59,23 @@ namespace csharp_tdd_bobs_bagels.tests
 
             // assert
             Assert.That(result, Is.False);
+        }
 
+        [Test]
 
+        public void ChangeCapacity() 
+        {
+            // arrange
+            Basket core = new Basket();
+            int newCapacity = core.Capacity + 5;
+
+            // assert
+            bool result = core.ChangeCapacity(newCapacity);
+            int capacity = core.Capacity;
+
+            // act
+            Assert.That(result, Is.True);
+            Assert.That(capacity, Is.EqualTo(newCapacity));
         }
     }
 }
