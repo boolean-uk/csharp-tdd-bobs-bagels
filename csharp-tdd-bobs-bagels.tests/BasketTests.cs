@@ -52,6 +52,23 @@ namespace tdd_bobs_bagels.CSharp.Test
         }
 
         [Test]
+        public void CannotRemoveIfMissing()
+        {
+            var stringWriter = new StringWriter();
+            Console.SetOut(stringWriter);
+
+            _core.Add("A");
+            _core.Remove("B");
+
+            List<string> l1 = _core._basket;
+            Assert.That(1, Is.EqualTo(l1.Count));
+
+            var outputLines = stringWriter.ToString().Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
+            Assert.That("Bagel B not in the basket!", Is.EqualTo(outputLines[0]));
+
+        }
+
+        [Test]
         public void CapacityExceeded()
         {
             var stringWriter = new StringWriter();
