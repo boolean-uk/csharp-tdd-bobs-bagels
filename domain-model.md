@@ -6,7 +6,7 @@ Class
 Properties
 : `List<string> _bagels = new List<string>{"A", "B", "C"}`
 : `List<string> _basket`
-: `int _capacity`
+: `int _capacity = 5`
 
 Methods
 : `Add(string description)`
@@ -19,3 +19,4 @@ Methods
 
 : `ChangeCapacity(int capacity)`
     * changes the value of the _capacity variable.
+    * the default of capacity is 5

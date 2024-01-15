@@ -49,5 +49,23 @@ namespace tdd_bobs_bagels.CSharp.Test
             Assert.That("B", Is.EqualTo(l1[0]));
 
         }
+
+        [Test]
+        public void CapacityExceeded()
+        {
+            var stringWriter = new StringWriter();
+            Console.SetOut(stringWriter);
+
+            _core.Add("A");
+            _core.Add("B");
+            _core.Add("A");
+            _core.Add("B");
+            _core.Add("C");
+
+            _core.Add("C");
+
+            var outputLines = stringWriter.ToString().Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
+            Assert.That("Basket size exceeded!", Is.EqualTo(outputLines[0]));
+        }
     }
 }
