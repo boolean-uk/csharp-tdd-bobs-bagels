@@ -38,7 +38,8 @@ namespace tdd_bobs_bagels.CSharp.Main
         }
         public int changeCapacity(int currentSize)
         {
-            return 0;
+            _basketSize += currentSize;
+            return _basketSize;
         }
     }
 
