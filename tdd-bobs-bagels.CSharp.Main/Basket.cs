@@ -22,7 +22,7 @@ namespace tdd_bobs_bagels.CSharp.Main
                 content.Add(type);
                 return true;
             }
-            Console.WriteLine("Capacity exceeded! Bagel not added");
+            Console.WriteLine($"Capacity exceeded! {type} bagel not added");
             return false;
         }
         public bool removeBagel(string type)
@@ -38,11 +38,10 @@ namespace tdd_bobs_bagels.CSharp.Main
             Console.WriteLine($"{type} not found in basket! No bagel removed");
             return false;
         }
-        public int changeCapacity(int currentSize)
+        public int changeCapacity(int addSize)
         {
-            _basketSize += currentSize;
+            _basketSize += addSize;
             return _basketSize;
         }
     }
-
 }

@@ -15,7 +15,7 @@ namespace tdd_bobs_bagels.CSharp.Test
             _basket.addBagel("smoked ham"); //3
             _basket.addBagel("bacon"); //4
             _basket.addBagel("standard"); //5
-            _basket.addBagel("everyting"); //6
+            _basket.addBagel("everything"); //6
             _basket.addBagel("chicken hickory"); //7 should not be added
         }
         [Test]

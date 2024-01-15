@@ -36,5 +36,6 @@ returns: true/false (Could add bagel/exceeds capacity)
 bool removeBagel (string bagelType)
 returns: true/false (Could remove bagel/bagel does not exist in basket)
 
-int changeCapacity (int currentSize)
+int changeCapacity (int addSize)
+Adds provided int to basked capacity
 returns: newSize
