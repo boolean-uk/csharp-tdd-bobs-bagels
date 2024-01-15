@@ -48,13 +48,29 @@ public class Tests
     public void ShouldReturnAfterAdding()
     {
         Core core = new Core();
-        Bagel bagel1 = Bagel.appleCinamon;
-        Bagel bagel2 = Bagel.garlic;
+        Bagel bagel = Bagel.appleCinamon;
 
-        bool add1 = core.Add(bagel1);
-        bool add2 = core.Add(bagel1);
+        bool add1 = core.Add(bagel);
+        bool add2 = core.Add(bagel);
 
         Assert.That(add1);
         Assert.That(!add2);
+    }
+
+    [Test]
+    public void ShouldReturnAfterRemoving()
+    {
+        Core core = new Core();
+        Bagel bagel1 = Bagel.appleCinamon;
+        Bagel bagel2 = Bagel.garlic;
+
+        core.Add(bagel1);
+        core.Add(bagel2);
+
+        bool rm1 = core.Remove(bagel1);
+        bool rm2 = core.Remove(bagel1);
+
+        Assert.That(rm1);
+        Assert.That(!rm2);
     }
 }

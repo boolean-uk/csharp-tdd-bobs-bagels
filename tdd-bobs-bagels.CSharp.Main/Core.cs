@@ -29,9 +29,10 @@ namespace tdd_bobs_bagels.CSharp.Main
             _capacity = cap;
         }
 
-        public void Remove(Bagel bagel)
+        public bool Remove(Bagel bagel)
         {
             _basket.Remove(bagel);
+            return false;
         }
     }
 }
