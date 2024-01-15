@@ -16,7 +16,8 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool Add(Bagle bagle)
         {
-            throw new NotImplementedException();
+            _bagles.Add(bagle);
+            return true;
         }
 
     }
