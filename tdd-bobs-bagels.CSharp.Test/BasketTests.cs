@@ -21,6 +21,15 @@ namespace tdd_bobs_bagels.CSharp.Test
             Assert.IsTrue(haveAdded);
         }
 
+        [TestCase("Peanut", true)]
+        [TestCase("", false)]
+        [TestCase("Cream", false)]
+        public void AddingMore(string bagelType, bool expected)
+        {
+            bool haveAdded = _core.AddBagel(bagelType);
+            Assert.That(expected, Is.EqualTo(haveAdded));
+        }
+
         [Test]
         public void RemovedBagel()
         {
@@ -30,25 +39,51 @@ namespace tdd_bobs_bagels.CSharp.Test
             Assert.That(beforeRem, Is.GreaterThan(afterRem));
         }
 
+        [TestCase("Cheese", true)]
+        [TestCase("", false)]
+        [TestCase("Cheese", false)]
+        public void RemovedMore(string bagelType, bool expected)
+        {
+            bool haveAdded = _core.RemoveBagel(bagelType);
+            Assert.That(expected, Is.EqualTo(haveAdded));
+        }
+
         [Test]
         public void IsBasketFull()
         {
-            bool full = _core.AddBagel("Peanuts");
+            bool full = _core.BasketFull();
+            Assert.That(true, Is.EqualTo(full));
+        }
+
+        [Test]
+        public void BasketFuller()
+        {
+            _core.AddBagel("Lime");
+            bool full = _core.BasketFull();
             Assert.That(false, Is.EqualTo(full));
         }
 
         [Test]
         public void IncreasedCapacity()
         {
-            _core.capacity = 6;
+            _core.IncreaseCapacity(_core.capacity + 3);
             bool full = _core.AddBagel("Peanuts");
             Assert.That(true, Is.EqualTo(full));
+        }
+
+        [Test]
+        public void TooMuchCapacity()
+        {
+            int oldCapacity = _core.capacity;
+            _core.IncreaseCapacity(-1);
+            int newCapacity = _core.capacity;
+            Assert.That(oldCapacity, Is.EqualTo(newCapacity));
         }
 
         [TestCase("Cream", true)]
         [TestCase("Jam", false)]
         [TestCase("Dressing", true)]
-        public void RemovedBagel(string bagelType, bool expected)
+        public void ItemDoesExist(string bagelType, bool expected)
         {
             bool removed = _core.RemoveBagel(bagelType);
             Assert.That(expected, Is.EqualTo(removed));

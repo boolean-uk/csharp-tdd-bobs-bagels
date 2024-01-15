@@ -32,7 +32,7 @@ namespace tdd_bobs_bagels.CSharp.Main
             return false;
         }
 
-        public int IncreaseCapacity()
+        public int IncreaseCapacity(int newCapacity)
         {
             return 0;
         }
