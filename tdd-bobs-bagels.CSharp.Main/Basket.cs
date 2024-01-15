@@ -36,6 +36,7 @@ namespace tdd_bobs_bagels.CSharp.Main
         {
             if (!Items.Contains(bagel))
             {
+                Console.WriteLine("No such bagel");
                 return false;
             }
             else
