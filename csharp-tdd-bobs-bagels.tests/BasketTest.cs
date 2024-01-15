@@ -58,4 +58,17 @@ public class Tests
         Assert.That(basket.content.Count() == 4);
         Assert.That(basket.errorMessage == "Limit cannot be lower than current items in basket");
     }
+    [Test]
+    public void RemoveBagelError()
+    {
+        //Set Up
+        Basket basket = new Basket();
+        //Execute
+        basket.add("Sugar Bagel");
+        basket.add("Chocolate Bagel");
+        basket.remove("Sugar Bagel");
+        basket.remove("Sugar Bagel");
+        //verify
+        Assert.That(basket.errorMessage == "There is no Sugar Bagel in your basket to remove");
+    }
 }

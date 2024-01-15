@@ -9,21 +9,25 @@ As a member of the public,
 So that I can not overfill my small bagel basket
 I'd like to know when my basket is full when I try adding an item beyond my basket capacity.
 ```
-| Classes    | Methods            | Function                 | Scenario                | Outputs |
-|------------|--------------------|--------------------------|-------------------------|---------|
-| `Basket`   | `add(string bagel)`| Adds bagel to basket     | Basket not full         | string  |
-|            |                    |                          | Basket full             | null    |
+| Classes    | Methods            | Function                 | Scenario                | Outputs              |
+|------------|--------------------|--------------------------|-------------------------|----------------------|
+| `Basket`   | `add(string bagel)`| Adds bagel to basket     | Basket not full         | string               |
+|            |                    |                          | Basket full             | errorMessage changed |
 
 ```
 2.
 As a member of the public,
 So I can change my order,
 I'd like to remove a bagel from my basket.
+5.
+As a member of the public
+So that I can maintain my sanity
+I'd like to know if I try to remove an item that doesn't exist in my basket.
 ```
-| Classes    | Methods               | Function                  | Outputs        |
-|------------|-----------------------|---------------------------|----------------|
-| `Basket`   | `remove(string bagel)`| Removes bagel from basket | remove string  |
-|            |                       |                           |                |
+| Classes    | Methods               | Function                  | Scenario                      | Outputs              |
+|------------|-----------------------|---------------------------|-------------------------------|----------------------|
+| `Basket`   | `remove(string bagel)`| Removes bagel from basket | Item exists in basket         | remove string        |
+|            |                       |                           | Item does not exist in basket | errorMessage changed |
 
 ```
 4.
