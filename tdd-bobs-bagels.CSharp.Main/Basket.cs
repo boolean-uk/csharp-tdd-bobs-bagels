@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,9 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool Remove(string type)
         {
-            throw new NotImplementedException();
+            int length = _bagles.Count;
+            _bagles.RemoveAt(_bagles.IndexOf(_bagles.Find(x => x.Name == type)));
+            return length > _bagles.Count;
         }
     }
 }
