@@ -45,6 +45,14 @@ namespace tdd_bobs_bagels.CSharp.Test
         }
 
         [Test]
+        public void RemoveBagelThrowsExceptionTest()
+        {
+            _basket.Order("Plain Bagel");
+            _basket.Order("Exceptional Bagel");
+            Assert.Throws<Exception>(() => _basket.Remove("Out of bounds Bagel"));
+        }
+
+        [Test]
         public void ChangeCapacityTest()
         {
             _basket.Capacity = 10;
