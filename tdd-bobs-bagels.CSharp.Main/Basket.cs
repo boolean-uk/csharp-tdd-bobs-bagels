@@ -27,12 +27,10 @@ namespace tdd_bobs_bagels.CSharp.Main
             return false;
         }
 
-        public bool Remove(string type)
+        public int Remove(string type)
         {
-            throw new NotImplementedException();
-            int length = _bagles.Count;
             _bagles.RemoveAt(_bagles.IndexOf(_bagles.Find(x => x.Name == type)));
-            return length > _bagles.Count;
+            return _bagles.Count;
         }
     }
 }
