@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System.IO;
 using tdd_bobs_bagels.CSharp.Main;
 
 namespace tdd_bobs_bagels.CSharp.Test
@@ -63,9 +64,28 @@ namespace tdd_bobs_bagels.CSharp.Test
             _core.Add("C");
 
             _core.Add("C");
+            var outputLines = stringWriter.ToString().Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
 
+            Assert.That("Basket size exceeded!", Is.EqualTo(outputLines[0]));
+        }
+
+        [Test]
+        public void ChangeCapacity()
+        {
+            var stringWriter = new StringWriter();
+            Console.SetOut(stringWriter);
+
+            _core.ChangeCapacity(3);
+
+            _core.Add("A");
+            _core.Add("B");
+            _core.Add("A");
+
+            _core.Add("B");
             var outputLines = stringWriter.ToString().Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
             Assert.That("Basket size exceeded!", Is.EqualTo(outputLines[0]));
+
+
         }
     }
 }
