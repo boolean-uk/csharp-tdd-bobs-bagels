@@ -14,7 +14,7 @@ public class Tests
     {
         Basket basket = new Basket();
 
-        Basket.Add("Everything");
-        Assert.IsNotEmpty(basket.Bagels);
+        basket.AddToBasket("Everything");
+        Assert.That(basket.Bagels.Count != 0);
     }
 }
