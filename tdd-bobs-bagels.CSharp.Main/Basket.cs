@@ -1,15 +1,28 @@
 ﻿
+
 namespace tdd_bobs_bagels.CSharp.Main
 {
     public class Basket
     {
         public List<string> Items { get; set; }
+        private int _capacity;
+
         public Basket()
         {
             Items = new List<string>();
+            _capacity = 39; //Arbitrarily chosen default capacity
+        }
+        public Basket(int capacity)
+        {
+            Items = new List<string>();
+            _capacity = capacity;
         }
         public void AddBagel(string bagel)
         {
+            if (Items.Count >= _capacity)
+            {
+                return;
+            }
             Items.Add(bagel);
         }
 
@@ -29,6 +42,11 @@ namespace tdd_bobs_bagels.CSharp.Main
                 Items.Remove(bagel);
                 return true;
             }
+        }
+
+        public bool IsFull()
+        {
+            throw new NotImplementedException();
         }
     }
 }

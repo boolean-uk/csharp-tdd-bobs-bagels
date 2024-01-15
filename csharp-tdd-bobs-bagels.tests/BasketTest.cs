@@ -34,4 +34,21 @@ public class BasketTest
         Assert.True(wasRemoved);
         Assert.That(basket.GetBagels().Count, Is.EqualTo(0));
     }
+
+    [Test]
+    public void TestIsFull()
+    {
+        //setup
+        Basket basket = new(2);
+        basket.AddBagel("someBagel");
+
+        //execute
+        bool shouldNotBeFull = basket.IsFull();
+        basket.AddBagel("Some other bagel");
+        bool shouldBeFull = basket.IsFull();
+
+        //verify
+        Assert.IsFalse(shouldNotBeFull);
+        Assert.IsTrue(shouldBeFull);
+    }
 }
