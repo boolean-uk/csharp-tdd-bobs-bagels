@@ -19,9 +19,9 @@ namespace tdd_bobs_bagels.CSharp.Main
             _basket.Add(bagel);
         }
 
-        public void ChangeCapacity(int v)
+        public void ChangeCapacity(int cap)
         {
-            throw new NotImplementedException();
+            _capacity = cap;
         }
 
         public void Remove(Bagel bagel)
