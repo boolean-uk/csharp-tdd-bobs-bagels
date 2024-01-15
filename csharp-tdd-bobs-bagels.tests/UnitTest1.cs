@@ -45,4 +45,14 @@ public class Tests
 
         Assert.That(core.Bagels.Count, Is.EqualTo(0));
     }
+
+    [Test]
+    public void TestRemoveNonexistant()
+    {
+        Core core = new Core();
+
+        core.Add("Plain");
+
+        Assert.Throws<Exception>(() => core.Remove("Chocolate"));
+    }
 }
