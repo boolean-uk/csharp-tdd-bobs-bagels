@@ -8,7 +8,7 @@ namespace tdd_bobs_bagels.CSharp.Main
 {
     public class Basket
     {
-        public int _capacity;
+        public int _capacity = 5;
         public List<string> _basket = new List<string>();
         public List<string> _bagels = new List<string> { "A", "B", "C" };
 
@@ -19,9 +19,14 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public void Add(string description)
         {
-            if (_bagels.Contains(description))
+            if ( _bagels.Contains(description) && _basket.Count < _capacity )
             {
+      
                 _basket.Add(description);
+            }
+            else
+            {
+                Console.Write("Basket size exceeded!");
             }
 
         }
