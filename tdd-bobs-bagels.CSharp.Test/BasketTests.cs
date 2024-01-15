@@ -24,6 +24,13 @@ namespace tdd_bobs_bagels.CSharp.Test
             Assert.IsTrue(result);
             Assert.IsTrue(_basket.Bagels.Contains("donut"));
         }
+        [Test]
+        public void AddEmptyTest()
+        {
+            bool result = _basket.AddBagel(" ");
+            Assert.IsFalse(result);
+            Assert.IsEmpty(_basket.Bagels);
+        }
 
         [Test]
         public void AddFullTest()

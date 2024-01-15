@@ -13,10 +13,11 @@ namespace tdd_bobs_bagels.CSharp.Main
         private List<string> _bagels = new List<string>();
         private int _capacity = 5;
 
-        public int Capacity { set { _capacity = value; } }
+        public int Capacity { set { if (value > 0) _capacity = value; } }
         public List<string> Bagels { get { return _bagels; } }
         public bool AddBagel(string bagel)
         {
+            if (bagel.Trim().Count() == 0) return false;
             if (Bagels.Count >= _capacity) return false;
             Bagels.Add(bagel);
             return true;
