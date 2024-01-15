@@ -25,6 +25,8 @@ namespace tdd_bobs_bagels.CSharp.Main
         }
 
         public bool AddBagel(string type) {
+            if (_capacity + 1 >= _totalInBasket)
+                return false;
             if(!_basket.ContainsKey(type) && type != "") {
                 _basket.Add(type, 1);
                 _totalInBasket += 1;
