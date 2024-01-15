@@ -13,8 +13,4 @@
     <PackageReference Include="NUnit3TestAdapter" Version="4.4.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\csharp-tdd-bobs-bagels.tests\csharp-tdd-bobs-bagels.tests.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -18,6 +18,7 @@ public class Tests
     {
         Core core = new Core();
         core.add("bagel");
+        core.add("differentBagel");
         Assert.Pass();
     }
 }

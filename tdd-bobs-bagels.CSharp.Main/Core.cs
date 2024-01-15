@@ -9,6 +9,13 @@ namespace tdd_bobs_bagels.CSharp.Main
     public class Core
     {
 
+        List<String> _bagels = new List<String>();
+
         public Core() { }
+
+        public void add(string v)
+        {
+            _bagels.Add(v);
+        }
     }
 }
