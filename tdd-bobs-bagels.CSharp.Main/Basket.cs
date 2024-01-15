@@ -14,5 +14,10 @@ namespace tdd_bobs_bagels.CSharp.Main
         {
             Orders.Add(bagel);
         }
+
+        public void Remove(string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

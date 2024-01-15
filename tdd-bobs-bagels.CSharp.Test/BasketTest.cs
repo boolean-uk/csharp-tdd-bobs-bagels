@@ -22,5 +22,13 @@ namespace tdd_bobs_bagels.CSharp.Test
             Assert.That(_basket.Orders.Contains("Frosted Bagel"), Is.True);
             Assert.That(_basket.Orders.Contains("Plain Bagel"), Is.True);
         }
+
+        [Test]
+        public void RemoveBagelTest()
+        {
+            _basket.Order("Plain Bagel");
+            _basket.Remove("Plain Bagel");
+            Assert.That(_basket.Orders.Count == 0, Is.True);
+        }
     }
 }
