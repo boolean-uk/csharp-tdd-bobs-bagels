@@ -34,4 +34,14 @@ public class Tests
 
         Assert.Throws<Exception>(() => core.Add("Chocolate"));
     }
+
+    public void TestRemove()
+    {
+        Core core = new Core();
+
+        core.Add("Plain");
+        core.Remove("Plain");
+
+        Assert.That(core.Bagels.Count, Is.EqualTo(0));
+    }
 }
