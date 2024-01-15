@@ -27,5 +27,15 @@ namespace tdd_bobs_bagels.CSharp.Main
         {
             content.RemoveAll(x => x == bagel);
         }
+        public void changeBasketLimit(int newLimit)
+        {
+            if(content.Count() < newLimit)
+            {
+                basketLimit = newLimit;
+            } else
+            {
+                errorMessage = "Limit cannot be lower than current items in basket";
+            }
+        }
     }
 }
