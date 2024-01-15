@@ -2,6 +2,7 @@ using tdd_bobs_bagels.CSharp.Main;
 
 namespace csharp_tdd_bobs_bagels.tests;
 
+[TestFixture]
 public class BasketTest
 {
 

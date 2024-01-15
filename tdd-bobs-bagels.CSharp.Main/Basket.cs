@@ -20,7 +20,15 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool RemoveBagel(string bagel)
         {
-            throw new NotImplementedException();
+            if (!Items.Contains(bagel))
+            {
+                return false;
+            }
+            else
+            {
+                Items.Remove(bagel);
+                return true;
+            }
         }
     }
 }
