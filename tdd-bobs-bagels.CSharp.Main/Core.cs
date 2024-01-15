@@ -14,9 +14,10 @@ namespace tdd_bobs_bagels.CSharp.Main
         public List<Bagel> Basket { get {  return _basket; } }
         public int Capacity { get { return _capacity; } }
 
-        public void Add(Bagel bagel)
+        public bool Add(Bagel bagel)
         {
             _basket.Add(bagel);
+            return false;
         }
 
         public void ChangeCapacity(int cap)

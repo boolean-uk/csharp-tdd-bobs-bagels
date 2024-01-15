@@ -43,4 +43,18 @@ public class Tests
 
         Assert.That(core.Capacity == 5);
     }
+
+    [Test]
+    public void ShouldReturnAfterAdding()
+    {
+        Core core = new Core();
+        Bagel bagel1 = Bagel.appleCinamon;
+        Bagel bagel2 = Bagel.garlic;
+
+        bool add1 = core.Add(bagel1);
+        bool add2 = core.Add(bagel1);
+
+        Assert.That(add1);
+        Assert.That(!add2);
+    }
 }
