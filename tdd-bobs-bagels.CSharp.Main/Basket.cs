@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace tdd_bobs_bagels.CSharp.Main
 {
-    public class Basket
-    {
+    public class Basket {
+
+
+        public List<string> _bagels;
+
+        public Basket() {
+            _bagels = new List<string>();
+        }
     }
 }

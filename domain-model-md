@@ -1,4 +1,15 @@
 ```C#
+class basket:
+    MEMEBRS:    
+        public List<string> basket (Maybe an array)
+        public int maxCapacity
+    
+    METHODS:
+        AddToBasket(string _bagel) | adds a bagel to the basket
+        RemoveFromBasket(string _bagel) | Removes the given bagel from baskte list
+        ChangeBasketSize() | Admin can set a new maxCaacity
 
-
+    HELPERS:    
+        IsFull() | return false if maxCapacity is not reached and true if it has
+        doesExists() | Return true if a specic bagel does exists in the basket false if not
 ```
