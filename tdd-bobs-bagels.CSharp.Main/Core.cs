@@ -24,15 +24,20 @@ namespace tdd_bobs_bagels.CSharp.Main
             return false;
         }
 
+        public bool Remove(Bagel bagel)
+        {
+            if (_basket.Contains(bagel))
+            {
+                _basket.Remove(bagel);
+                return true;
+            }
+            
+            return false;
+        }
+
         public void ChangeCapacity(int cap)
         {
             _capacity = cap;
-        }
-
-        public bool Remove(Bagel bagel)
-        {
-            _basket.Remove(bagel);
-            return false;
         }
     }
 }
