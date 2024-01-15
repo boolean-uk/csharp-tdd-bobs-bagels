@@ -12,9 +12,10 @@ public class BasketTest
         Basket basket = new();
 
         //execute
-        basket.addBagel("someBagel");
+        basket.AddBagel("someBagel");
 
         //verify
-        Assert.AreEqual(basket.getBagels().Count, 1);
+        Assert.That(basket.GetBagels().Count, Is.EqualTo(1));
+        Assert.That(basket.GetBagels()[0], Is.EqualTo("someBagel"));
     }
 }
