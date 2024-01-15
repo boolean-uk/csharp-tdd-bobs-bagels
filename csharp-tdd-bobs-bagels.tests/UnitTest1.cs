@@ -102,4 +102,29 @@ public class Tests
         Assert.IsTrue(status == false);
 
     }
+
+    [Test]
+    public void testNewCapacity()
+    {
+        //Arrange
+        Basket basket = new Basket();
+
+
+        //Act
+        string bagel1 = "bread";
+        string bagel2 = "crossiant";
+        string bagel3 = "Moji";
+        basket.Add(bagel1);
+        basket.Add(bagel2);
+        basket.Add(bagel3);
+        int newCapacity = 5;
+        basket.NewCapacity(newCapacity);
+
+
+        //Assert
+        Assert.IsTrue(basket.getCapacity == newCapacity);
+
+    }
+
+
 }
