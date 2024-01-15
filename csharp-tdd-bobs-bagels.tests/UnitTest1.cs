@@ -56,4 +56,28 @@ public class Tests
         Assert.AreEqual(testResult, basket._basket);
 
     }
+
+    [Test]
+    public void testCheckBasket()
+    {
+        //Arrange
+        Basket basket = new Basket();
+
+
+        //Act
+        string bagel1 = "bread";
+        string bagel2 = "crossiant";
+        string bagel3 = "Moji";
+        basket.Add(bagel1);
+        basket.Add(bagel2);
+        basket.Add(bagel3);
+        int capacity = basket._Capacity;
+        bool status = basket.checkBasket();
+        
+
+
+        //Assert
+        Assert.IsTrue(status == false);
+
+    }
 }
