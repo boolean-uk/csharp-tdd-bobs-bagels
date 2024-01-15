@@ -26,9 +26,11 @@ namespace tdd_bobs_bagels.CSharp.Main
             return true;
         }
 
-        public void Remove(Bagel v)
+        public bool Remove(Bagel v)
         {
+            if(!_bagels.Contains(v)) return false;
             _bagels.Remove(v);
+            return true;
         }
 
         public void changeCapacity(int v)
