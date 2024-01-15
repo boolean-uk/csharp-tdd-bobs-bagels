@@ -5,8 +5,8 @@ namespace csharp_tdd_bobs_bagels.tests;
 [TestFixture]
 public class BasketTest
 {
-    [TestCase("Plain")]
-    public void AddBagelTest(string type)
+    [TestCase("Plain", 2)]
+    public void AddBagelTest(string type, int 2)
     {
 
         //arrange
@@ -14,7 +14,7 @@ public class BasketTest
         basket.Bagels.Add("Plain", 2);
 
         //act
-        basket.AddBagel("Plain");
+        basket.AddBagel(type, 2);
 
         //assert
         Assert.IsTrue(basket.Bagels.Count > 0);
@@ -25,6 +25,7 @@ public class BasketTest
     [TestCase("Plain")]
     public void RemoveBagelTest(string type)
     {
+
 
     }
 

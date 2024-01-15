@@ -14,9 +14,9 @@ namespace Main
         public Dictionary<string, int> Bagels { get; set; } = new Dictionary<string, int>(3);
         
  
-        public void AddBagel(string type)
+        public void AddBagel(string type, int value 2)
         {
-            throw new NotImplementedException();
+            Bagels.Add(type, );
         }
 
         public bool RemoveBagel(string type)
