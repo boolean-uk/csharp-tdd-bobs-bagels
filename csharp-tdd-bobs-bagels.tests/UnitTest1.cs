@@ -126,5 +126,54 @@ public class Tests
 
     }
 
+    [Test]
+    public void testNewCapacity2()
+    {
+        //Arrange
+        Basket basket = new Basket();
+
+
+        //Act
+        string bagel1 = "bread";
+        string bagel2 = "crossiant";
+        string bagel3 = "Moji";
+        basket.Add(bagel1);
+        basket.Add(bagel2);
+        basket.Add(bagel3);
+        int newCapacity = 5;
+        basket.NewCapacity(newCapacity);
+
+
+        //Assert
+        Assert.IsTrue(basket.getCapacity != 3);
+
+    }
+
+    [Test]
+    public void testCheckBasket()
+    {
+        //Arrange
+        Basket basket = new Basket();
+
+
+        //Act
+        string bagel1 = "bread";
+        string bagel2 = "crossiant";
+        string bagel3 = "Moji";
+        string bagel4 = "Brownie";
+        basket.Add(bagel1);
+        basket.Add(bagel2);
+        basket.Add(bagel3);
+        int newCapacity = 5;
+        basket.NewCapacity(newCapacity);
+        bool sanityCheck1 = CheckBasket(bagel1);
+        bool sanityCheck2 = CheckBasket(bagel4);
+
+
+        //Assert
+        Assert.IsTrue(sanityCheck1 == true && sanityCheck2 == false);
+
+    }
+
 
 }
