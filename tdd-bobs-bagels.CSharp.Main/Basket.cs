@@ -35,6 +35,7 @@ namespace tdd_bobs_bagels.CSharp.Main
                     return true;
                 }
             }
+            Console.WriteLine($"{type} not found in basket! No bagel removed");
             return false;
         }
         public int changeCapacity(int currentSize)
