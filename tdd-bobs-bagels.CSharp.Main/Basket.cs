@@ -17,8 +17,12 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         }
 
-        public void Add(string name)
+        public void Add(string description)
         {
+            if (_bagels.Contains(description))
+            {
+                _basket.Add(description);
+            }
 
         }
     }
