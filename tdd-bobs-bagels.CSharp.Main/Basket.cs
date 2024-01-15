@@ -25,7 +25,14 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public void remove(string bagel)
         {
-            content.RemoveAll(x => x == bagel);
+            if(content.Contains(bagel))
+            {
+                content.RemoveAll(x => x == bagel);
+            } else
+            {
+                errorMessage = $"There is no {bagel} in your basket to remove";
+            }
+                
         }
         public void changeBasketLimit(int newLimit)
         {
