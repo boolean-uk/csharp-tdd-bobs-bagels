@@ -7,16 +7,13 @@ namespace tdd_bobs_bagels.CSharp.Test
     public class BasketTest
     {
         private Basket _basket;
-        public BasketTest()
-        {
-            _basket = new Basket();
-        }
+        
 
 
         [SetUp]
         public void SetUp() 
         {
-            _basket.basket = new List<Basket.Bagle>();
+            _basket = new Basket();
         }
 
         [Test] 
@@ -28,24 +25,20 @@ namespace tdd_bobs_bagels.CSharp.Test
 
             Assert.That(testText, Is.EqualTo(new string("Sourdough Bagle added to basket")));
         }
+
+
         [Test]
         public void SecondTest()
         {
             //AddBagleToBasket
 
-            string testText = _basket.AddBagleToBasket(Basket.BagleType.Gluten_free);
-            Console.WriteLine(testText);
-            testText = _basket.AddBagleToBasket(Basket.BagleType.Plain);
-            Console.WriteLine(testText);
-            testText = _basket.AddBagleToBasket(Basket.BagleType.Sourdough);
-            Console.WriteLine(testText);
-            testText = _basket.AddBagleToBasket(Basket.BagleType.Sourdough);
-            Console.WriteLine(testText);
-            testText = _basket.AddBagleToBasket(Basket.BagleType.Gluten_free);
-            Console.WriteLine(testText);
-
-            Assert.That(testText, Is.EqualTo(new string("Basket is full. Will not fitt last gluten_free Bagle")));
+            _basket.AddBagleToBasket(Basket.BagleType.Plain);
+            _basket.AddBagleToBasket(Basket.BagleType.Plain);
+            _basket.AddBagleToBasket(Basket.BagleType.Sourdough);
+            _basket.AddBagleToBasket(Basket.BagleType.Sourdough);
             Assert.That(_basket.basket.Count, Is.EqualTo(4));
+            string testText = _basket.AddBagleToBasket(Basket.BagleType.Gluten_free);
+            Assert.That(testText, Is.EqualTo(new string("Basket is full. Will not fit last Gluten_free Bagle")));
         }
 
         [Test]
@@ -89,9 +82,11 @@ namespace tdd_bobs_bagels.CSharp.Test
 
             string testText = _basket.ChangeBasketSize(6);
 
-            Assert.That(testText, Is.EqualTo(new string("basketsize was changed from 4 to 6 ")));
+            Assert.That(testText, Is.EqualTo(new string("basketsize was changed from 4 to 6")));
 
         }
+
+        
 
 
     }
