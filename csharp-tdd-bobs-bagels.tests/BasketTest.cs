@@ -28,4 +28,18 @@ public class Tests
         //verify
         Assert.That(basket.content[0] == "Chocolate Bagel");
     }
+    [Test]
+    public void BasketLimit()
+    {
+        //Set Up
+        Basket basket = new Basket();
+        //Execute
+        basket.add("Sugar Bagel");
+        basket.add("Chocolate Bagel");
+        basket.add("Banana Bagel");
+        basket.add("Ham Bagel");
+        //verify
+        Assert.That(basket.content.Count() == 3);
+        Assert.That(basket.errorMessage == "Basket already full");
+    }
 }
