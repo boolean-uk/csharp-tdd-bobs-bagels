@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -36,7 +37,16 @@ namespace Main
 
         public bool IsBasketFull()
         {
-           throw new NotImplementedException();
+           if(Bagels.Count >= 3)
+            {
+                return true;
+                Console.WriteLine("Basket is full");
+            }
+            else
+            {
+                return false;
+                Console.WriteLine("Basket is not full");
+            }
         }
 
         public void ChangeBasketCapacity()
