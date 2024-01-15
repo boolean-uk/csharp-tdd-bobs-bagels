@@ -13,8 +13,10 @@ public class Tests
     public void TestAdd()
     {
         Basket basket = new Basket();
+        Bagel bagel = new Bagel("Everything");
 
-        basket.AddToBasket("Everything");
+        basket.AddToBasket(bagel);
         Assert.That(basket.Bagels.Count != 0);
     }
+
 }

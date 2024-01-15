@@ -8,14 +8,14 @@ namespace tdd_bobs_bagels.CSharp.Main
 {
     public class Basket
     {
-        private List<string> _bagels = [];
+        private List<Bagel> _bagels = [];
 
-        public void AddToBasket(string bagel)
+        public void AddToBasket(Bagel bagel)
         {
             Bagels.Add(bagel);
             
         }
         
-        public List<string> Bagels { get { return _bagels; } set { _bagels = value; } }
+        public List<Bagel> Bagels { get { return _bagels; } set { _bagels = value; } }
     }
 }

@@ -35,9 +35,9 @@ I'd like to know if I try to remove an item that doesn't exist in my basket.
 
 | Classes         | Methods                                     | Scenario               | Outputs |
 |-----------------|---------------------------------------------|------------------------|---------|
-| `Basket`		  | `add(String bagel)`							|If basket has room		 | null    |
+| `Basket`		  | `add(Bagel bagel)`							|If basket has room		 | null    |
 |                 |												|If no room in basket	 |Exeption |
-|                 | `remove(String bagel)`                      |If bagel exists		 |null	   |
+|                 | `remove(Bagel bagel)`                       |If bagel exists		 |null	   |
 |                 | 											|If bagel does not exist |Exeption	|
 |                 | `expand(int amount)`						|					     |string	|
 | `Bagel`         | `Bagel(Type type)`							|						 |Bagel		|
