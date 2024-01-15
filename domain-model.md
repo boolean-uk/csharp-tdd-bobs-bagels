@@ -15,28 +15,16 @@ As a member of the public,
 
 As a Bob's Bagels manager,
 - So that I can expand my business,
-    I’d like to change the capacity of baskets.
+    Iâ€™d like to change the capacity of baskets.
 ```
-
-Notes:
-Add bagel to basket
-Remove bagel from basket
-Know when basket is full, when trying to add item
-Know if try to remove item that doesn't exist in basket
-
-Manager can change capacity of basket
-
 
 | Classes             | Methods                                                      | Scenario               | Outputs |
 |---------------------|--------------------------------------------------------------|------------------------|---------|
 | `abstract``Object`  | ``                                                   |                        | `` |
 |                     |                                                      |                        | `` |
-
 | `abstract``Person : Object` | ``                                         |                        | `` |
 |                     |                                                      |                        | `` |
-
 | `Customer : Person` |                                                      |                        | `` |
-
 | `Manager : Person`  | `public``bool AlterSize(Basket basket, int newSize)` | Update the size of the basket | `true` |
 |                     |                                                      | Cannot update basket size due to newSize variable is invalid, or basket doesn't exist | `false` |
 |                     |                                                      |                        | `` |
