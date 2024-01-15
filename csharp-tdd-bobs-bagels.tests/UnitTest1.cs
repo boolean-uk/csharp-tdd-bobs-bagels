@@ -59,4 +59,16 @@ public class Tests
         core.Add(Bagel.blueberryChocolateChip);
         Assert.IsFalse(core.Add(Bagel.everything));
     }
+
+    [Test]
+    public void removeExisting()
+    {
+        Assert.True(core.Remove(Bagel.appleCinamon));
+    }
+
+    [Test]
+    public void removeNonexisting()
+    {
+        Assert.False(core.Remove(Bagel.plain));
+    }
 }

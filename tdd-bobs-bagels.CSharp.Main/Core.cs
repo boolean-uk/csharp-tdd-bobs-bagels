@@ -21,7 +21,7 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool Add(Bagel v)
         {
-            if (bagels.Count == capacity) return false;
+            if (bagels.Count >= capacity) return false;
             _bagels.Add(v);
             return true;
         }
@@ -33,7 +33,7 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public void changeCapacity(int v)
         {
-            throw new NotImplementedException();
+            capacity = v;
         }
     }
 }
