@@ -24,7 +24,9 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool Remove(string bagel)
         {
-            return Orders.Remove(bagel);
+            bool isRemoved = Orders.Remove(bagel)
+                ? true : throw new Exception("That bagel does not exist!");
+            return isRemoved;
         }
     }
 }
