@@ -11,4 +11,18 @@ public class Core
         capacity = 3;
     }
 
+    public bool add(string bagel)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool remove(string bagel)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void setCapacity(int capasity)
+    {
+        throw new NotImplementedException();
+    }
 }
