@@ -1,0 +1,10 @@
+| Component            | Method                   | Scenario                          | Output                             |
+|----------------------|--------------------------|-----------------------------------|------------------------------------|
+| List <string> Basket | Add(string BagelName)    | bagel is added to Basket          | """added to Basket"""              |
+|                      |                          | String is empty                   | """no input detected"""            |
+|                      |                          | Basket is full                    | """cart is full"""                 |
+|                      | Remove(string BagelName) | bagel is removed from Basket      | """Removed {string}"""             |
+|                      |                          | Bagel doesnt exist in Basket      | """Bagel doesnt exist in Basket""" |
+|                      |                          | string is empty                   | """no input detected"""            |
+|                      | BasketSize(int size)     | size changed to a positive number | TRUE                               |
+|                      |                          | input is less than 1              | FALSE                              |
