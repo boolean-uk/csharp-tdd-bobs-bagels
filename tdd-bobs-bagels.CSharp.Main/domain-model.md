@@ -2,7 +2,7 @@
 
 Exercise 1)
 | Classes         | List                    | Methods                                     | Outputs                                        |
-|-----------------|-----------------------------------------------------------------------|------------------------------------------------|
+|-----------------|-------------------------|---------------------------------------------|------------------------------------------------|
 |                 | `List<string> basket`   | `public bool Add(string name)`              |  Adds bagel to basket                          |
 | `Basket`        |                         |									          |                                                |
 |                 |                         | `public bool Remove(string name)`           |  Removes bagel from basket                     |
