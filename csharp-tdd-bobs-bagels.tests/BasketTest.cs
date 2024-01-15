@@ -6,15 +6,14 @@ namespace csharp_tdd_bobs_bagels.tests;
 public class BasketTest
 {
     [TestCase("Plain", 2)]
-    public void AddBagelTest(string type, int 2)
+    public void AddBagelTest(string type, int price)
     {
 
         //arrange
         Basket basket = new Basket();
-        basket.Bagels.Add("Plain", 2);
 
         //act
-        basket.AddBagel(type, 2);
+        basket.AddBagel(type, price);
 
         //assert
         Assert.IsTrue(basket.Bagels.Count > 0);
@@ -25,20 +24,35 @@ public class BasketTest
     [TestCase("Plain")]
     public void RemoveBagelTest(string type)
     {
+        //arrange
 
+        //act
+
+        //assert
+        Assert.Fail();
 
     }
 
     [Test]
     public void IsBasketFull()
     {
+        //arrange
 
+        //act
+
+        //assert
+        Assert.Fail();
     }
 
     [Test]
     public void ChangeBasketCapacity()
     {
+        //arrange
 
+        //act
+
+        //assert
+        Assert.Fail();
     }
     
 }

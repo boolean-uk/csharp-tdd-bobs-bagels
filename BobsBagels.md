@@ -5,4 +5,4 @@
 |                   |                                                                     |                                                       | Bagel *is not* in basket       | false        |
 |                   |                                                                     | `IsBasketFull()`                                      | Basket *is* full               | true         |
 |                   |                                                                     |                                                       | Basket *is not* full           | false        |
-|                   | `int capacity`                                                      | `ChangeBasketCapacity()`                                |                                |              |
+|                   |                                                                     | `ChangeBasketCapacity(int capacity)`                  |                                |              | 
