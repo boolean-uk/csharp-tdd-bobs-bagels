@@ -28,5 +28,21 @@ namespace csharp_tdd_bobs_bagels.tests
             //  Assert - check the results
             Assert.That(result==true);
         }
+
+        public void Test2()
+        {
+            //  Arrange - set up test values
+            Bagle bagle = new Bagle("bagle");
+            _basket.Add(bagle);
+            _basket.Add(bagle);
+            _basket.Add(bagle);
+            _basket.Add(bagle);
+            bool result = _basket.Add(bagle);
+
+            //  Act - use the fucntion we want to test
+
+            //  Assert - check the results
+            Assert.That(result == true);
+        }
     }
 }
