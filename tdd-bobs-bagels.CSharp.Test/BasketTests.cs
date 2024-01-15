@@ -12,6 +12,9 @@ namespace tdd_bobs_bagels.CSharp.Test
             _basket = new Basket(6);
             _basket.addBagel("poppy seed");
             _basket.addBagel("cream cheese");
+            _basket.addBagel("smoked ham");
+            _basket.addBagel("bacon");
+            _basket.addBagel("standard");
         }
         [Test]
         public void addBagelTest()
@@ -23,7 +26,7 @@ namespace tdd_bobs_bagels.CSharp.Test
         [Test]
         public void removeBagelTest()
         {
-
+            
         }
         [Test]
         public void changeCapacityTest()

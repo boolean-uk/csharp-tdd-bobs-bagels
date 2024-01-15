@@ -17,6 +17,11 @@ namespace tdd_bobs_bagels.CSharp.Main
         }
         public bool addBagel(string type)
         {
+            if(content.Count()<_basketSize)
+            {
+                content.Add(type);
+                return true;
+            }
             return false;
         }
         public bool removeBagel(string type)
