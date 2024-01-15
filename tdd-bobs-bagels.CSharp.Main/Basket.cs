@@ -10,9 +10,9 @@ namespace tdd_bobs_bagels.CSharp.Main
     {
         public List<string> Orders { get; set; } = new();
 
-        public void Order(string v)
+        public void Order(string bagel)
         {
-            throw new NotImplementedException();
+            Orders.Add(bagel);
         }
     }
 }
