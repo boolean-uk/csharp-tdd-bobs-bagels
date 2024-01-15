@@ -1,4 +1,5 @@
-﻿namespace tdd_bobs_bagels.CSharp.Main
+﻿
+namespace tdd_bobs_bagels.CSharp.Main
 {
     public class Basket
     {
@@ -15,6 +16,11 @@
         public List<string> GetBagels()
         {
             return Items;
+        }
+
+        public bool RemoveBagel(string bagel)
+        {
+            throw new NotImplementedException();
         }
     }
 }
