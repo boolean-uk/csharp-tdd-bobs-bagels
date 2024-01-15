@@ -16,7 +16,11 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool Add(Bagel bagel)
         {
-            _basket.Add(bagel);
+            if (!_basket.Contains(bagel))
+            {
+                _basket.Add(bagel);
+                return true;
+            }
             return false;
         }
 
