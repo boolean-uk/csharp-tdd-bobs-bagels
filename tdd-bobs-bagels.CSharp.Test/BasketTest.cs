@@ -24,6 +24,15 @@ namespace tdd_bobs_bagels.CSharp.Test
         }
 
         [Test]
+        public void OrderBagelThrowsExceptionOnOverfillTest()
+        {
+            _basket.Capacity = 1;
+            _basket.Order("Frosted Bagel");
+            _basket.Order("Overflow Bagel");
+            Assert.Throws<Exception>(() => _basket.Order("Overflow Bagel"));
+        }
+
+        [Test]
         public void RemoveBagelTest()
         {
             _basket.Order("Plain Bagel");
