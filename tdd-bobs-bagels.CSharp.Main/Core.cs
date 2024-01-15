@@ -16,7 +16,7 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool Add(Bagel bagel)
         {
-            if (!_basket.Contains(bagel))
+            if (_basket.Count + 1 <= _capacity)
             {
                 _basket.Add(bagel);
                 return true;
@@ -26,7 +26,7 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool Remove(Bagel bagel)
         {
-            if (_basket.Contains(bagel))
+            if (_basket.Contains(bagel) && _basket.Count - 1 >= 0)
             {
                 _basket.Remove(bagel);
                 return true;
@@ -44,6 +44,6 @@ namespace tdd_bobs_bagels.CSharp.Main
 
 public enum Bagel
 {
-    appleCinamon, blueberryChocolateChip, Egg, cinamonRaisin, everything,
+    appleCinamon, blueberryChocolateChip, egg, cinamonRaisin, everything,
     frenchToast, garlic, jalapeno, marbleOnion, poppy, plain, pumpernickle
 }

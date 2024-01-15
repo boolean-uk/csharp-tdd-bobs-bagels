@@ -51,6 +51,8 @@ public class Tests
         Bagel bagel = Bagel.appleCinamon;
 
         bool add1 = core.Add(bagel);
+        core.Add(bagel);
+        core.Add(bagel);
         bool add2 = core.Add(bagel);
 
         Assert.That(add1);
@@ -72,5 +74,31 @@ public class Tests
 
         Assert.That(rm1);
         Assert.That(!rm2);
+    }
+
+
+    [Test]
+    public void ChangeCapacityLowerTest()
+    {
+        Core core = new Core();
+        core.Add(Bagel.appleCinamon);
+        core.Add(Bagel.garlic);
+
+        core.ChangeCapacity(2);
+        Assert.That(!core.Add(Bagel.frenchToast));
+    }
+
+    [Test]
+    public void ChangeCapacityUpperTest()
+    {
+        Core core = new Core();
+        core.Add(Bagel.appleCinamon);
+        core.Add(Bagel.garlic);
+
+        core.ChangeCapacity(5);
+        core.Add(Bagel.egg);
+        core.Add(Bagel.pumpernickle);
+        core.Add(Bagel.blueberryChocolateChip);
+        Assert.That(!core.Add(Bagel.everything));
     }
 }
