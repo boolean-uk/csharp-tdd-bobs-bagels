@@ -1,11 +1,12 @@
 Class Basket
 
  -- Properties --
- List<string> bagels;
- int capacity {set}
+private List<string> _bagels;
+private int _capacity 
+public int Capacity {set _capacity}
 
  -- Methods -- 
- bool AddBagel(string bagel)
+bool AddBagel(string bagel)
 	true when item succesfully added
 	false when basket is full
 
