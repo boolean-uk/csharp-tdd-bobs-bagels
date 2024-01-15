@@ -15,6 +15,7 @@ namespace tdd_bobs_bagels.CSharp.Test
             _basket.addBagel("smoked ham");
             _basket.addBagel("bacon");
             _basket.addBagel("standard");
+            _basket.removeBagel("bacon");
         }
         [Test]
         public void addBagelTest()
@@ -26,7 +27,8 @@ namespace tdd_bobs_bagels.CSharp.Test
         [Test]
         public void removeBagelTest()
         {
-            
+            Assert.IsTrue(_basket.content.Contains("poppy seed"));
+            Assert.IsFalse(_basket.content.Contains("bacon"));
         }
         [Test]
         public void changeCapacityTest()
