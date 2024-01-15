@@ -14,20 +14,25 @@ public class Tests
     public void Setup()
     {
         core = new Core();
-        core.add("bagel");
-        core.add("differentBagel");
+        core.Add(Bagel.appleCinamon);
+        core.Add(Bagel.blueberryChocolateChip);
     }
 
     [Test]
     public void addTest()
     {
-        Assert.AreEqual(core.bagels, new List<string>() { "bagel", "differentBagel" });
+        Assert.AreEqual(core.bagels, new List<Bagel>() { Bagel.appleCinamon, Bagel.blueberryChocolateChip });
     }
 
     [Test]
     public void removeTest() 
     {
-        core.remove("differentBagel");
-        Assert.AreEqual(core.bagels, new List<string>() { "bagel" });
+        core.Remove(Bagel.blueberryChocolateChip);
+        Assert.AreEqual(core.bagels, new List<Bagel>() { Bagel.appleCinamon });
+    }
+
+    [Test]
+    public void addReturnTrue() {
+        Assert.IsTrue(core.Add( Bagel.frenchToast ));
     }
 }

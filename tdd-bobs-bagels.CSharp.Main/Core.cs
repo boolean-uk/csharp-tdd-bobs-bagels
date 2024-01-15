@@ -6,20 +6,23 @@ using System.Threading.Tasks;
 
 namespace tdd_bobs_bagels.CSharp.Main
 {
+    public enum Bagel { appleCinamon, blueberryChocolateChip, Egg, cinamonRaisin, everything, 
+        frenchToast, garlic, jalapeno, marbleOnion, poppy, plain, pumpernickle }
+
     public class Core
     {
 
-        private List<String> _bagels = new List<String>();
-        public List<string> bagels { get { return _bagels; } }
+        private List<Bagel> _bagels = new List<Bagel>();
+        public List<Bagel> bagels { get { return _bagels; } }
 
         public Core() { }
 
-        public void add(string v)
+        public void Add(Bagel v)
         {
             _bagels.Add(v);
         }
 
-        public void remove(string v)
+        public void Remove(Bagel v)
         {
             _bagels.Remove(v);
         }
