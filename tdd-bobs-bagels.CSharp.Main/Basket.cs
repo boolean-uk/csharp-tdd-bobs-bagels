@@ -9,10 +9,18 @@ namespace tdd_bobs_bagels.CSharp.Main
     public class Basket
     {
         public List<string> content = new List<string>();
+        public int basketLimit = 3;
+        public string errorMessage = "Unknown Error";
 
         public void add(string bagel)
         {
-            content.Add(bagel);
+            if(content.Count() < basketLimit)
+            {
+                content.Add(bagel);
+            } else
+            {
+                errorMessage = "Basket already full";
+            }
         }
 
         public void remove(string bagel)
