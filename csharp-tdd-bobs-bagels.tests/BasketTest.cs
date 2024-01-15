@@ -32,7 +32,7 @@ public class BasketTest
 
         //verify
         Assert.True(wasRemoved);
-        Assert.That(basket.GetBagels().Count, Is.EqualTo(0));
+        Assert.That(basket.GetBagels(), Is.Empty);
     }
 
     [Test]
@@ -67,20 +67,5 @@ public class BasketTest
         //verify
         Assert.IsTrue(shouldBeFull);
         Assert.IsFalse(shouldNotBeFull);
-    }
-
-    [Test]
-    public void TestRemoveBagel()
-    {
-        //setup
-        Basket basket = new(1);
-        basket.AddBagel("Bagel1");
-
-        //execute
-        bool wasRemoved = basket.RemoveBagel("Bagel1");
-
-        //verify
-        Assert.True(wasRemoved);
-        Assert.That(basket.GetBagels(), Is.Empty);
     }
 }
