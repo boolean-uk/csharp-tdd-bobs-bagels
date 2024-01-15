@@ -8,6 +8,6 @@ namespace tdd_bobs_bagels.CSharp.Main
 {
     public class Basket
     {
-        
+        public  List<string> basket { get; set; } = new List<string>();
     }
 }

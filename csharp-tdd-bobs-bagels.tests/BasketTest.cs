@@ -12,7 +12,7 @@ namespace csharp_tdd_bobs_bagels.tests
     {
 
         [Test]
-        public void add() 
+        public void Add() 
         {
             // arrange 
             Basket core = new Basket();
@@ -20,12 +20,29 @@ namespace csharp_tdd_bobs_bagels.tests
 
             // act
             core.basket.Add(bagel);
-            string result = core.basket.first();
-            int length = core.basket.count();
+            string result = core.basket.First();
+            int length = core.basket.Count();
 
             // assert
-            Assert.AreEqual(bagel, result);
-            Assert.IsTrue(length == 1);            
+            Assert.That(result, Is.EqualTo(bagel));
+            Assert.That(length, Is.EqualTo(1));            
+        }
+
+        [Test]
+        public void Remove()
+        {
+            // arrange 
+            Basket core = new Basket();
+            string bagel = "cream bagel";
+            core.basket.Add(bagel);
+
+            // act
+            bool result = core.Remove(bagel);
+            int length = core.basket.Count();
+            
+            // assert
+            Assert.That(result, Is.True);
+            Assert.That(length, Is.EqualTo(0));
         }
     }
 }
