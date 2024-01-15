@@ -18,5 +18,10 @@ namespace tdd_bobs_bagels.CSharp.Main
         {
             _bagels.Add(v);
         }
+
+        public void remove(string v)
+        {
+            _bagels.Remove(v);
+        }
     }
 }
