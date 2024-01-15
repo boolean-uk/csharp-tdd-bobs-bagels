@@ -4,5 +4,5 @@
 |			|                                                                    |									| Bagle basket *is* full										| false		|
 |			|                                                                    | `Remove(string)`                 | Item with the provided name *is* in the basket				| int		|
 |			|                                                                    |									| Item with the provided name *is not* in the basket			| int		|
-|			|                                                                    | `ChangeCapacity()`               |																|			|
+|			|                                                                    | `ChangeCapacity(int)`            |																| int		|
 |			|                                                                    |									|																|			|

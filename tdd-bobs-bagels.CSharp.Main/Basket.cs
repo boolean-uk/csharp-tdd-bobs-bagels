@@ -32,5 +32,10 @@ namespace tdd_bobs_bagels.CSharp.Main
             _bagles.RemoveAt(_bagles.IndexOf(_bagles.Find(x => x.Name == type)));
             return _bagles.Count;
         }
+
+        public int ChangeCapacity(int amount)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

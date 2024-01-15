@@ -26,7 +26,7 @@ namespace csharp_tdd_bobs_bagels.tests
             //  Act - use the fucntion we want to test
 
             //  Assert - check the results
-            Assert.That(result==true);
+            Assert.That(result == true);
         }
 
         [Test]
@@ -62,6 +62,20 @@ namespace csharp_tdd_bobs_bagels.tests
 
             //  Assert - check the results
             Assert.That(result < 4);
+        }
+
+        [Test]
+        [TestCase(1)]
+        [TestCase(5)]
+        [TestCase(10)]
+        public void Test4(int i)
+        {
+            //  Arrange - set up test values
+
+            //  Act - use the fucntion we want to test
+            int result = _basket.ChangeCapacity(i);
+            //  Assert - check the results
+            Assert.That(result == i);
         }
     }
 }
