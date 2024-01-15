@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using tdd_bobs_bagels.CSharp.Main.Classes;
+
+namespace Classes
+{
+
+    public class Basket
+    {
+        private int _capacity = 3; 
+        private List<Bagel> _bagels = new List<Bagel>();
+
+        public List<Bagel> Bagels { get => _bagels; }
+
+        public Basket() { }
+
+        public string Add(Bagel bagel)
+        {
+
+            return "";
+        }
+
+        public string Remove(Bagel bagel) 
+        {
+
+            return "";
+        }
+
+        public void SetCapacity(int capacity)
+        {
+
+        }
+    }
+}
