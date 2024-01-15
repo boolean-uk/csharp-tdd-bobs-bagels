@@ -56,12 +56,12 @@ namespace csharp_tdd_bobs_bagels.tests
             _basket.Add(bagle);
             _basket.Add(bagle);
 
-            bool result = _basket.Remove("bagle");
+            int result = _basket.Remove("bagle");
 
             //  Act - use the fucntion we want to test
 
             //  Assert - check the results
-            Assert.That(result == true);
+            Assert.That(result < 4);
         }
     }
 }
