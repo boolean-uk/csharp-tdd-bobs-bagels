@@ -15,6 +15,10 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public void Order(string bagel)
         {
+            if (Orders.Count >= Capacity)
+            {
+                throw new Exception("The basket is overflowing!");
+            }
             Orders.Add(bagel);
         }
 

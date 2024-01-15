@@ -14,6 +14,12 @@ namespace tdd_bobs_bagels.CSharp.Test
 
         Basket _basket = new();
 
+        [SetUp]
+        public void SetUp()
+        {
+            _basket = new Basket();
+        }
+
         [Test]
         public void OrderBagelTest()
         {
@@ -28,7 +34,6 @@ namespace tdd_bobs_bagels.CSharp.Test
         {
             _basket.Capacity = 1;
             _basket.Order("Frosted Bagel");
-            _basket.Order("Overflow Bagel");
             Assert.Throws<Exception>(() => _basket.Order("Overflow Bagel"));
         }
 
