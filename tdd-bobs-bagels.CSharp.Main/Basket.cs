@@ -11,6 +11,7 @@ namespace tdd_bobs_bagels.CSharp.Main
     {
         //set basket capacity, i.e list length
         List<string> basket = new List<string>();
+        public int basketCapacity = 2;
 
         public Basket() 
         { 
@@ -18,20 +19,50 @@ namespace tdd_bobs_bagels.CSharp.Main
         }
 
 
-        public bool addBagel(string bagelType)
+        public bool addBagel(string bagelType, out string message)
         {
-            return true;
+            if (basket.Count < basketCapacity)
+            {
+                basket.Add(bagelType);
+                message = string.Empty;
+                return true;
+            }
+            else 
+            {
+                message = "Basket is full";
+                return false; 
+            }
         }
 
-        public bool removeBagel(string bagelType)
+        public List<string> GetBasketContent()
         {
-            return false;
+            return new List<string>(basket); // Return a copy of the basket to prevent modification from outside
+        }
+
+
+
+        public bool removeBagel(string bagelType, out string message)
+        {
+            Console.WriteLine(basket.Count);
+            if (basket.Contains(bagelType))
+            {
+                basket.Remove(bagelType);
+                message = string.Empty;
+                //
+                return true;
+            }
+            else
+            {
+                message = "Item not in basket";
+                return false;
+            }
         }
 
 
         public int changeCapacity(int newCapacity)
         {
-            return 0;        
+            basketCapacity = newCapacity;   
+            return basketCapacity;
         }
     }
 }
