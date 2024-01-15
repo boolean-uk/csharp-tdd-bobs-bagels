@@ -35,7 +35,8 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public int ChangeCapacity(int amount)
         {
-            throw new NotImplementedException();
+            _capacity = amount;
+            return _capacity;
         }
     }
 }
