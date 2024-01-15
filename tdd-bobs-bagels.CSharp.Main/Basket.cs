@@ -21,7 +21,16 @@ namespace Main
 
         public bool RemoveBagel(string type)
         {
-            throw new NotImplementedException();
+            bool result = false;
+            if (Bagels.ContainsKey(type))
+            {
+                Bagels.Remove(type);
+
+            } else
+            {
+                Console.WriteLine("Bagel does not exists");
+            }
+            return result;
         }
 
         public bool IsBaketFull()
