@@ -25,11 +25,13 @@ public class BasketTest
     public void RemoveBagelTest(string type)
     {
         //arrange
+        Basket basket = new Basket();
 
         //act
+        basket.RemoveBagel(type);
 
         //assert
-        Assert.Fail();
+        Assert.IsTrue(basket.Bagels.Count == 0);
 
     }
 
