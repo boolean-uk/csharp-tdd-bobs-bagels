@@ -2,15 +2,19 @@
 {
     public class Basket
     {
-        public Basket() { }
-        public void AddBagel(string v)
+        public List<string> Items { get; set; }
+        public Basket()
         {
-            throw new NotImplementedException();
+            Items = new List<string>();
+        }
+        public void AddBagel(string bagel)
+        {
+            Items.Add(bagel);
         }
 
         public List<string> GetBagels()
         {
-            throw new NotImplementedException();
+            return Items;
         }
     }
 }
