@@ -8,6 +8,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\tdd-bobs-bagels.CSharp.Main\tdd-bobs-bagels.CSharp.Main.csproj" />
+	  <PackageReference Include="microsoft.net.test.sdk" Version="17.7.2" />
+	  <PackageReference Include="nunit" Version="3.13.3" />
+	  <PackageReference Include="nunit3testadapter" Version="4.5.0" />
   </ItemGroup>
 
 </Project>
