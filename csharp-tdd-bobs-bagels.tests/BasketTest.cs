@@ -76,7 +76,7 @@ public class Tests
         bool res5 = _basket.AddBagelToBasket(bagel5);
         bool res6 = _basket.AddBagelToBasket(bagel6);
         bool res7 = _basket.AddBagelToBasket(bagel7);
-        string[] consoleOut = sw.ToString().Split("\n");
+        string[] consoleOut = sw.ToString().Split(new[] { Environment.NewLine }, StringSplitOptions.None);
 
 
         // Assert
