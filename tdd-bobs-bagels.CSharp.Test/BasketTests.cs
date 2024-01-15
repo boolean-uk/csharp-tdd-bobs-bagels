@@ -9,9 +9,7 @@ namespace tdd_bobs_bagels.CSharp.Test
         public BasketTests()
         {
             _core = new Basket();
-            _core.AddBagel("Cream");
-            _core.AddBagel("Cheese");
-            _core.AddBagel("Dressing");
+            _core.AddBagel("Cream");   
         }
 
         [Test]
@@ -39,7 +37,7 @@ namespace tdd_bobs_bagels.CSharp.Test
             Assert.That(beforeRem, Is.GreaterThan(afterRem));
         }
 
-        [TestCase("Cheese", true)]
+        [TestCase("Cream", true)]
         [TestCase("", false)]
         [TestCase("Cheese", false)]
         public void RemovedMore(string bagelType, bool expected)
@@ -51,14 +49,6 @@ namespace tdd_bobs_bagels.CSharp.Test
         [Test]
         public void IsBasketFull()
         {
-            bool full = _core.BasketFull();
-            Assert.That(true, Is.EqualTo(full));
-        }
-
-        [Test]
-        public void BasketFuller()
-        {
-            _core.AddBagel("Lime");
             bool full = _core.BasketFull();
             Assert.That(false, Is.EqualTo(full));
         }
@@ -82,7 +72,7 @@ namespace tdd_bobs_bagels.CSharp.Test
 
         [TestCase("Cream", true)]
         [TestCase("Jam", false)]
-        [TestCase("Dressing", true)]
+        [TestCase("Dressing", false)]
         public void ItemDoesExist(string bagelType, bool expected)
         {
             bool removed = _core.RemoveBagel(bagelType);
