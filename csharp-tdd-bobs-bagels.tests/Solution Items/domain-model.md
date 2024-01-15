@@ -56,7 +56,7 @@ I'd like to know when my basket is full when I try adding an item beyond my bask
 ```
 | Classes         | Methods                 | Scenario														   | Outputs          |
 |-----------------|-------------------------|------------------------------------------------------------------|------------------|
-|`basket`		  |	`checkBasket`			| check if the basket is full by compare #items to capacity		   | bool             |
+|`basket`		  |	`checkBasketFull`			| check if the basket is full by compare #items to capacity		   | bool             |
 
 ```
 4.

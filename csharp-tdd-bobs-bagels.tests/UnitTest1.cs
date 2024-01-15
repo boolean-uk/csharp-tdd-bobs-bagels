@@ -58,7 +58,7 @@ public class Tests
     }
 
     [Test]
-    public void testCheckBasket()
+    public void testCheckBasket1()
     {
         //Arrange
         Basket basket = new Basket();
@@ -71,9 +71,31 @@ public class Tests
         basket.Add(bagel1);
         basket.Add(bagel2);
         basket.Add(bagel3);
-        int capacity = basket._Capacity;
-        bool status = basket.checkBasket();
+        int capacity = basket.getCapacity;
+        bool status = basket.checkBasketFull();
+
         
+        //Assert
+        Assert.IsTrue(status == true && capacity == basket._basket.Count);
+
+    }
+
+    [Test]
+    public void testCheckBasket2()
+    {
+        //Arrange
+        Basket basket = new Basket();
+
+
+        //Act
+        string bagel1 = "bread";
+        string bagel2 = "crossiant";
+        string bagel3 = "Moji";
+        basket.Add(bagel1);
+        basket.Add(bagel2);
+       
+        int capacity = basket.getCapacity;
+        bool status = basket.checkBasketFull();
 
 
         //Assert
