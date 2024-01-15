@@ -19,7 +19,7 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool AddBagelToBasket(string bagelType) 
         {
-            if (!HasRoom(1)) 
+            if (!HasRoom()) 
             {
                 return false;
             }
@@ -42,9 +42,9 @@ namespace tdd_bobs_bagels.CSharp.Main
             return _basket.Remove(bagelType);
         }
 
-        public bool HasRoom(int offset = 0)
+        public bool HasRoom()
         {
-            if ((_basket.Count + offset) <= _maxBasketSize)
+            if ((_basket.Count) < _maxBasketSize)
             {
                 return true;
             }
@@ -64,10 +64,10 @@ namespace tdd_bobs_bagels.CSharp.Main
         public int SetBasketSize(int newSize) 
         {
             _maxBasketSize = newSize;
-            while (!HasRoom()) // Prune basket until it complies with the new size rules.
+            while (_basket.Count > _maxBasketSize) // Prune basket until it complies with the new size rules.
             {
                 _basket.RemoveAt(new Random().Next(0, _basket.Count));
-            }
+            } 
 
             return _basket.Count;
         }
