@@ -22,7 +22,7 @@ public class Tests
     {
         Core basket = new Core();
 
-        basket.maxCap = 1;
+        basket.maxCap(1);
 
         basket.addBagel("Onion");
 
@@ -58,7 +58,6 @@ public class Tests
         bool capTest = basket.maxCap(1);
 
         Assert.IsTrue(capTest);
-
     
     }
 
