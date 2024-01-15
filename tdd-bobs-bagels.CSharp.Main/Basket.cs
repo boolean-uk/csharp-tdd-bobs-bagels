@@ -9,11 +9,9 @@ namespace tdd_bobs_bagels.CSharp.Main
     public class Basket
     {
         public List<string> Orders { get; set; } = new();
+        private int _capacity = 5;
 
-        public bool Capacity(int v)
-        {
-            throw new NotImplementedException();
-        }
+        public int Capacity { get { return _capacity;} set { _capacity = value; } }
 
         public void Order(string bagel)
         {

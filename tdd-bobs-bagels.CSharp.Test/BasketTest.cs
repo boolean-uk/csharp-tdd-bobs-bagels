@@ -33,7 +33,7 @@ namespace tdd_bobs_bagels.CSharp.Test
         [Test]
         public void ChangeCapacityTest()
         {
-            _basket.Capacity(10);
+            _basket.Capacity = 10;
             Assert.That(_basket.Capacity, Is.EqualTo(10));
         }
     }
