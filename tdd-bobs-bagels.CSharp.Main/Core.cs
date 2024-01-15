@@ -36,7 +36,8 @@ namespace tdd_bobs_bagels.CSharp.Main
             Bagels.Remove(bagel);
             BasketSize += 1;
         }
-        
+                
+                
         public List<Bagel> Bagels { get { return _bagels; } set { _bagels = value; } }
         public int BasketSize { get { return _basketSize; } set { _basketSize = value; } }
     }
