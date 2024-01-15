@@ -35,4 +35,11 @@ public class Tests
     public void addReturnTrue() {
         Assert.IsTrue(core.Add( Bagel.frenchToast ));
     }
+
+    [Test]
+    public void addReturnFalse()
+    {
+        core.Add(Bagel.plain);
+        Assert.IsFalse(core.Add(Bagel.frenchToast));
+    }
 }
