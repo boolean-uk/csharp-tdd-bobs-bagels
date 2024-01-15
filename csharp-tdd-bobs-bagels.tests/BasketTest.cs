@@ -24,11 +24,11 @@ namespace csharp_tdd_bobs_bagels.tests {
 
         [Test]
         public void TestAddToBasket() {
-            bool isAdded = basket.AddTask("new bagel");
+            bool isAdded = basket.AddToBasket("new bagel");
 
             Assert.IsTrue(isAdded);
             Assert.IsTrue(basket._bagels.Any(b => b == "new bagel"));
-            Assert.That(basket._bagels.Count, Is.EqualTo(5));
+            Assert.That(basket._bagels.Count, Is.EqualTo(6));
         }
 
         [Test]
@@ -45,11 +45,11 @@ namespace csharp_tdd_bobs_bagels.tests {
             basket._bagels.Add("Poppy Seed Bagel");
             basket._bagels.Add("Poppy Seed Bagel");
 
-            bool isAdded = basket.AddTask("new bagel");
+            bool isAdded = basket.AddToBasket("new bagel");
 
             Assert.IsFalse(isAdded);
             Assert.IsFalse(basket._bagels.Any(b => b == "new bagel"));
-            Assert.That(basket._bagels.Count, Is.EqualTo(5));
+            Assert.That(basket._bagels.Count, Is.EqualTo(10));
         }
 
         [Test]

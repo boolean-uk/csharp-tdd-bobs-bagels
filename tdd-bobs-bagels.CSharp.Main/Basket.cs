@@ -10,24 +10,40 @@ namespace tdd_bobs_bagels.CSharp.Main
 
 
         public List<string> _bagels;
+        public int maxCapacity;
 
         public Basket() {
             _bagels = new List<string>();
         }
 
-        public bool AddTask(string v)
-        {
-            throw new NotImplementedException();
+        public bool AddToBasket(string _bagel) {
+            if (!isFull()) {
+                _bagels.Add(_bagel); return true;
+            }
+            else {
+                return false;
+            }
         }
 
-        public void ChangeBasketSize(int v)
+        private bool isFull()
         {
-            throw new NotImplementedException();
+            return _bagels.Count >= maxCapacity;
         }
 
-        public bool RemoveFromBasket(string v)
+        public void ChangeBasketSize(int newSize)
         {
-            throw new NotImplementedException();
+            maxCapacity = newSize;
+        }
+
+        public bool RemoveFromBasket(string _bagel)
+        {
+            if (_bagels.Contains(_bagel))
+            {
+                _bagels.Remove(_bagel); return true; // Only removes the first occurrence of _bagel
+            } else
+            {
+                return false;  
+            }
         }
     }
 }
