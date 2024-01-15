@@ -4,7 +4,7 @@
 | - | - |
 | `Basket`| `List<string> _basket` `int _maxBasketSize` |
 
-| Classes | Methods | Scenario (user story) | Outputs |
+| Classes | Methods | Scenario (user_story_#) | Outputs |
 |-|-|-|-|
 | `Basket` | `AddBagelToBasket(string bagelType)` | Add a specific bagel to basket (1) | true |
 | | | Failed to add bagel to basket | false |
