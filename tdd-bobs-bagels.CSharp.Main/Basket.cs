@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 namespace Main
 {
     public class Basket
-{
-        public int Capacity { get; set; } = 3;
-
+    { 
 
         public Dictionary<string, int> Bagels { get; set; } = new Dictionary<string, int>(3);
+
         
  
         public void AddBagel(string type, int price)
         {
             Bagels.Add(type, price);
+            Console.WriteLine($"{type} bagel has been added to basket");
         }
 
         public bool RemoveBagel(string type)
@@ -25,6 +25,7 @@ namespace Main
             if (Bagels.ContainsKey(type))
             {
                 Bagels.Remove(type);
+                Console.WriteLine($"{type} bagel has been removed from basket");
 
             } else
             {
@@ -33,9 +34,9 @@ namespace Main
             return result;
         }
 
-        public bool IsBaketFull()
+        public bool IsBasketFull()
         {
-            throw new NotImplementedException();
+           throw new NotImplementedException();
         }
 
         public void ChangeBasketCapacity()

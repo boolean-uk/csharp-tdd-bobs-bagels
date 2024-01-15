@@ -40,14 +40,20 @@ public class BasketTest
     }
 
     [Test]
-    public void IsBasketFull()
+    public void IsBasketFullTest()
     {
         //arrange
+        Basket basket = new Basket();
+        basket.AddBagel("PLain", 2);
+        basket.AddBagel("Sourdough", 3);
+        basket.AddBagel("Egg", 4);
 
         //act
+        bool result = basket.IsBasketFull();
 
         //assert
-        Assert.Fail();
+        Assert.IsTrue(result);
+
     }
 
     [Test]
