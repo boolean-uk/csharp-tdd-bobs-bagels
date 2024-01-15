@@ -33,9 +33,13 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public void Remove(string description) 
         {
-            if (_bagels.Contains(description)) 
+            if (_basket.Contains(description)) 
             {
                 _basket.Remove(description);
+            }
+            else
+            {
+                Console.Write($"Bagel {description} not in the basket!");
             }
         }
 
