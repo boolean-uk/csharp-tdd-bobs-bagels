@@ -17,9 +17,10 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public Core() { }
 
-        public void Add(Bagel v)
+        public bool Add(Bagel v)
         {
             _bagels.Add(v);
+            return true;
         }
 
         public void Remove(Bagel v)
