@@ -26,5 +26,12 @@ I'd like to remove a bagel from my basket.
 |            |                       |                           |                |
 
 ```
-
+4.
+As a Bob's Bagels manager,
+So that I can expand my business,
+I’d like to change the capacity of baskets.
 ```
+| Classes    | Methods                 | Function                 | Scenario                                                          | Outputs                    |
+|------------|-------------------------|--------------------------|-------------------------------------------------------------------|----------------------------|
+| `Basket`   | `changeBasketlimit(int)`| Changes basket limit     | New basket limit is larger than current amount of items in basket | Basket limit changed       |
+|            |                         |                          | New basket limit is less than current amount of items in basket   | Basket limit not changed   |

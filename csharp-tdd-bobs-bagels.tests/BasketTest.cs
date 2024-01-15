@@ -42,4 +42,20 @@ public class Tests
         Assert.That(basket.content.Count() == 3);
         Assert.That(basket.errorMessage == "Basket already full");
     }
+    [Test]
+    public void ChangeBasketLimit()
+    {
+        //Set Up
+        Basket basket = new Basket();
+        //Execute
+        basket.add("Sugar Bagel");
+        basket.add("Chocolate Bagel");
+        basket.add("Banana Bagel");
+        basket.changeBasketLimit(4);
+        basket.add("Ham Bagel");
+        basket.changeBasketLimit(2);
+        //verify
+        Assert.That(basket.content.Count() == 4);
+        Assert.That(basket.errorMessage == "Limit cannot be lower than current items in basket");
+    }
 }
