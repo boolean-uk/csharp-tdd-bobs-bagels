@@ -14,6 +14,11 @@ namespace tdd_bobs_bagels.CSharp.Main
         {
             _basket.Add(bagel);
         }
+
+        public void Remove(Bagel bagel1)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 
