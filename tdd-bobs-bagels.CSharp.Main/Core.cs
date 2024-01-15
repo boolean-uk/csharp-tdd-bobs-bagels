@@ -18,5 +18,16 @@ namespace tdd_bobs_bagels.CSharp.Main
         {
             _basket.Add( bagel ) ;
         }
+
+        public bool Remove(string bagel)
+        {
+            //throw new NotImplementedException();
+            if (_basket.Contains(bagel)) { 
+                _basket.Remove(bagel) ;
+                return true;
+            }
+            else return false;  
+
+        }
     }
 }
