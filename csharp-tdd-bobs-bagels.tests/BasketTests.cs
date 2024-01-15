@@ -46,7 +46,7 @@ namespace tdd_bobs_bagels.CSharp.Test
 
             Assert.That(1, Is.EqualTo(l1.Count));
 
-            Assert.Equals(l1[0], "B");
+            Assert.That("B", Is.EqualTo(l1[0]));
 
         }
     }
