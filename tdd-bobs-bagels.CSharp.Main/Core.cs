@@ -9,7 +9,8 @@ namespace tdd_bobs_bagels.CSharp.Main
     public class Core
     {
 
-        List<String> _bagels = new List<String>();
+        private List<String> _bagels = new List<String>();
+        public List<string> bagels { get { return _bagels; } }
 
         public Core() { }
 

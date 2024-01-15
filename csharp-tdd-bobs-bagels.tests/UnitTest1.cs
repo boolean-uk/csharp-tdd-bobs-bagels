@@ -8,17 +8,26 @@ namespace csharp_tdd_bobs_bagels.tests;
 
 public class Tests
 {
+    Core core;
+
     [SetUp]
     public void Setup()
     {
+        core = new Core();
+        core.add("bagel");
+        core.add("differentBagel");
     }
 
     [Test]
     public void addTest()
     {
-        Core core = new Core();
-        core.add("bagel");
-        core.add("differentBagel");
-        Assert.Pass();
+        Assert.AreEqual(core.bagels, new List<string>() { "bagel", "differentBagel" });
+    }
+
+    [Test]
+    public void removeTest() 
+    {
+        core.remove("differentBagel");
+        Assert.AreEqual(core.bagels, new List<string>() { "bagel" });
     }
 }
