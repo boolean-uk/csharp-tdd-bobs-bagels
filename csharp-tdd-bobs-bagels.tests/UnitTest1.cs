@@ -15,6 +15,6 @@ public class Tests
         Basket basket = new Basket();
 
         Basket.Add("Everything");
-        Assert.IsNotEmpty(basket);
+        Assert.IsNotEmpty(basket.Bagels);
     }
 }
