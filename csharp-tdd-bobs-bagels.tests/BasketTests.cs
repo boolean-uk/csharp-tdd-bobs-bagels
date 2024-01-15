@@ -29,5 +29,21 @@ namespace tdd_bobs_bagels.CSharp.Test
 
 
         }
+
+        [Test]
+        public void RemovingWorks()
+        {
+            _core.Add("A");
+            _core.Add("B");
+
+            _core.Remove("A");
+
+            List<string> l1 = _core._basket;
+
+            Assert.That(1, Is.EqualTo(l1.Count));
+
+            Assert.Equals(l1[0], "B");
+
+        }
     }
 }
