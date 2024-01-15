@@ -38,5 +38,10 @@ namespace tdd_bobs_bagels.CSharp.Main
                 _basket.Remove(description);
             }
         }
+
+        public void ChangeCapacity(int new_capacity)
+        {
+            this._capacity = new_capacity;
+        }
     }
 }
