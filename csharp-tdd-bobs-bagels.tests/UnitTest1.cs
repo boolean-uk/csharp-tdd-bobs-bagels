@@ -35,6 +35,7 @@ public class Tests
         Assert.Throws<Exception>(() => core.Add("Chocolate"));
     }
 
+    [Test]
     public void TestRemove()
     {
         Core core = new Core();

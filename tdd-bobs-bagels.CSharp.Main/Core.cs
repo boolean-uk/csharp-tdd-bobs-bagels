@@ -33,5 +33,10 @@ namespace tdd_bobs_bagels.CSharp.Main
                 throw new Exception("Basket is full");
             }
         }
+
+        public void Remove(string bagel)
+        {
+            Bagels.Remove(bagel);
+        }
     }
 }
