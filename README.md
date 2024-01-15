@@ -18,6 +18,11 @@
 
 ## User Stories
 
+
+Classes........................ 	Methods............................. 	Scenario....................... 	Outputs..................
+|--------------------------------|---------------------------------------|----------------------------------|---------------------------------
+Basket								basket.Add("cheese")					Add bagel flavour to basket			List<string> 
+
 ```
 1.
 As a member of the public,
@@ -25,12 +30,22 @@ So I can order a bagel before work,
 I'd like to add a specific type of bagel to my basket.
 ```
 
+Classes........................ 	Methods............................. 	Scenario....................... 	Outputs..................
+|--------------------------------|---------------------------------------|----------------------------------|---------------------------------
+Basket								basket.Remove("pork")					Remove bagel flavour from basket	List<string>
 ```
 2.
 As a member of the public,
 So I can change my order,
 I'd like to remove a bagel from my basket.
 ```
+
+
+Classes........................ 	Methods............................. 	Scenario....................... 	Outputs..................
+|--------------------------------|---------------------------------------|----------------------------------|---------------------------------
+Basket								basket.Count > 3						if total bagel amount exceeds max.	false									
+Basket								basket.Count <= 3						if total bagel amount is below max.	true									
+
 
 ```
 3.
@@ -39,6 +54,11 @@ So that I can not overfill my small bagel basket
 I'd like to know when my basket is full when I try adding an item beyond my basket capacity.
 ```
 
+
+Classes........................ 	Methods............................. 	Scenario....................... 	Outputs..................
+|--------------------------------|---------------------------------------|----------------------------------|---------------------------------
+Basket								basket.Count > 5						if total bagel amount exceeds max.	false									
+Basket								basket.Count <= 5						if total bagel amount is below max.	true									
 ```
 4.
 As a Bob's Bagels manager,
@@ -46,6 +66,9 @@ So that I can expand my business,
 I’d like to change the capacity of baskets.
 ```
 
+Classes........................ 	Methods............................. 	Scenario....................... 	Outputs..................
+|--------------------------------|---------------------------------------|----------------------------------|---------------------------------
+Basket								basket.SearchBasketByName				Remove bagel from basket			false
 ```
 5.
 As a member of the public
