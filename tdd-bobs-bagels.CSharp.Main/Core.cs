@@ -40,7 +40,7 @@ namespace tdd_bobs_bagels.CSharp.Main
         public bool Remove(string bagel)
         {
             //throw new NotImplementedException();
-            if (_basket.Contains(bagel))
+            if (CheckBasket(bagel))
             {
                 _basket.Remove(bagel);
                 return true;
@@ -52,6 +52,16 @@ namespace tdd_bobs_bagels.CSharp.Main
         public void NewCapacity(int newCapacity)
         {
             _capacity = newCapacity;
+        }
+
+        public bool CheckBasket(string bagel) {
+            if (_basket.Contains(bagel))
+            {
+                return true;
+            }
+            else {
+                return false;
+            }
         }
     }
 }

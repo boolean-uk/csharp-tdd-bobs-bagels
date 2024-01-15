@@ -166,8 +166,8 @@ public class Tests
         basket.Add(bagel3);
         int newCapacity = 5;
         basket.NewCapacity(newCapacity);
-        bool sanityCheck1 = CheckBasket(bagel1);
-        bool sanityCheck2 = CheckBasket(bagel4);
+        bool sanityCheck1 = basket.CheckBasket(bagel1);
+        bool sanityCheck2 = basket.CheckBasket(bagel4);
 
 
         //Assert
