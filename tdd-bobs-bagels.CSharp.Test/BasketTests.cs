@@ -37,6 +37,10 @@ namespace tdd_bobs_bagels.CSharp.Test
             Assert.IsTrue(_basket.content.Contains("poppy seed"));
             Assert.IsFalse(_basket.content.Contains("bacon"));
         }
+        public void removeNothingTest()
+        {
+            Assert.IsFalse(_basket.removeBagel("asphalt bagel"));
+        }
         [Test]
         public void changeCapacityTest()
         {
