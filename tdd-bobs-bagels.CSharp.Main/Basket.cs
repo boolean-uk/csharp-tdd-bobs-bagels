@@ -29,7 +29,10 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public int Remove(string type)
         {
-            _bagles.RemoveAt(_bagles.IndexOf(_bagles.Find(x => x.Name == type)));
+            if (_bagles.Exists(x => x.Name == type))
+            {
+                _bagles.RemoveAt(_bagles.IndexOf(_bagles.Find(x => x.Name == type)));
+            }
             return _bagles.Count;
         }
 
