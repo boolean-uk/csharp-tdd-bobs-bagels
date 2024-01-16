@@ -20,20 +20,20 @@ As a Bob's Bagels manager,
 
 | Classes             | Methods                                                      | Scenario               | Outputs |
 |---------------------|--------------------------------------------------------------|------------------------|---------|
-| `abstract``Object`  | ``                                                   |                        | `` |
+| `abstract``Object`  |                                                    |                        | `` |
 |                     |                                                      |                        | `` |
-| `abstract``Person : Object` | ``                                         |                        | `` |
+| `abstract``Person : Object` |                                            |                        | `` |
 |                     |                                                      |                        | `` |
 | `Customer : Person` |                                                      |                        | `` |
-| `Manager : Person`  | `public``bool AlterSize(Basket basket, int newSize)` | Update the size of the basket | `true` |
+| `Manager : Person`  | `public bool AlterSize(Basket basket, int newSize)` | Update the size of the basket | `true` |
 |                     |                                                      | Cannot update basket size due to newSize variable is invalid, or basket doesn't exist | `false` |
 |                     |                                                      |                        | `` |
-| `Product : Object`  | `public``double GetPrice()`                                         |                        | `value` |
+| `Product : Object`  | `public double GetPrice()`                                         |                        | `value` |
 | `Bagel : Product`   |                                                      |                        |   |
-| `Basket` : Object   | `public``bool AddProduct(Product product)`           | Add product to basket    | `true` |
+| `Basket` : Object   | `public bool AddProduct(Product product)`           | Add product to basket    | `true` |
 |                     |                                                      | Cannot add product to basket due to basket size limit     | `false` |
 |                     |                                                      | Cannot add product to basket due to product being invalid | `false` |
-|                     | `public``bool RemoveProduct(Product product)`        | Remove product from basket | `true` |
+|                     | `public bool RemoveProduct(Product product)`        | Remove product from basket | `true` |
 |                     |                                                      | Cannot remove product from basket due to product not existing in basket, or is invalid | `false` |
-|                     | `protected internal``bool AlterSize(int newSize)` | Update the size of the basket to newSize if newSize is valid | `true` |
-|                     | `protected internal``bool AlterSize(int newSize)` | Cannot update the size of the basket to newSize because newSize is invalid (negative number or past max limit) | `false` |
+|                     | `protected internal bool AlterSize(int newSize)` | Update the size of the basket to newSize if newSize is valid | `true` |
+|                     | `protected internal bool AlterSize(int newSize)` | Cannot update the size of the basket to newSize because newSize is invalid (negative number or past max limit) | `false` |
