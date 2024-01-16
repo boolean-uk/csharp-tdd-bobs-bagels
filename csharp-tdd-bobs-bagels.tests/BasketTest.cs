@@ -40,7 +40,7 @@ namespace csharp_tdd_bobs_bagels.tests
         [Test]
         public void RemoveTest()
         {
-            _basket.Remove("test");
+            _basket.Remove("Test");
             Assert.That(_basket.Bagels, Is.EqualTo(new Basket().Bagels));
         }
 
