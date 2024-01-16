@@ -35,4 +35,15 @@ public class Tests
         Assert.That(result1, Is.EqualTo("Bagel was removed from the basket."));
         Assert.That(result2, Is.EqualTo("This bagel doesn't exist in basket"));
     }
+
+    public void ChangingBasketCapasity()
+    {
+        basket.ChangeCapasity(5);
+
+        basket.AddBagel(Basket.Bagel.Cinnamon);
+        basket.AddBagel(Basket.Bagel.Salt);
+        basket.AddBagel(Basket.Bagel.Blueberry);
+
+        Assert.That(basket.GetBasket().Count, Is.EqualTo(5)); 
+    }
 }
