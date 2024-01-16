@@ -58,11 +58,15 @@ As a member of the public
 So that I can maintain my sanity
 I'd like to know if I try to remove an item that doesn't exist in my basket.
 
-| Classes  | Methods                                | Scenario                                            | Outputs           |
-| -------- | -------------------------------------- | ----------------------------------------------------|------------------ |
-| `Basket` | `ChangeBasketCapacity(int newCapacity)`| If the capacity is changed successfully             | True              |
-|          |                                        | If the new capacity is invalid or the same as before| False             |
+| Classes  | Methods                                             | Scenario                                                | Outputs           |
+| -------- | ----------------------------------------------------|---------------------------------------------------------| ------------------|
+| `Basket` | `RemoveItemThatDoesntExist(string bagelType)`       | If the specified bagel type doesn't exist in the basket | True              |
+|          |                                                     | If the specified bagel type exists in the basket        | False             |
+|          |                                                     | If the new capacity is invalid or the same as before    | False             |
 
+
+
+```
 
 
 ```
