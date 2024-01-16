@@ -1,0 +1,6 @@
+Class: Basket		Method: AddProduct(product)				void: add product to list				case: As a member of the public, So I can order a bagel before work, I'd like to add a specific type of bagel to my basket.
+Class: Basket		Method: RemoveProduct(product)			void: remove product from list			case: As a member of the public, So I can change my order, I'd like to remove a bagel from my basket.
+Class: Basket		Method: AddProduct(product)				out: "You are overencumbered"			case: As a member of the public,So that I can not overfill my small bagel basketI'd like to know when my basket is full when I try adding an item beyond my basket capacity.
+Class: Basket		Method: ChangeCapacity(n)				void: capacity = n						case:As a Bob's Bagels manager,So that I can expand my business,I’d like to change the capacity of baskets.
+Class: Basket		Method: RemoveProduct(product)			out: "no such product to remove"		case:As a member of the publicSo that I can maintain my sanityI'd like to know if I try to remove an item that doesn't exist in my basket.
+//remember to commit before implementing
