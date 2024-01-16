@@ -1,29 +1,37 @@
 using tdd_bobs_bagels.CSharp.Main;
-using NUnit.Framework;
-
 namespace csharp_tdd_bobs_bagels.tests;
 
 public class Tests
 {
+    Basket basket;
+
     [SetUp]
     public void Setup()
     {
+        basket = new Basket();
+        basket.AddBagel(Basket.Bagel.Egg);
+        basket.AddBagel(Basket.Bagel.Plain);
     }
 
     [Test]
     public void AddingBagelToBakset()
     {
-        Basket basket = new Basket();
-
-        string result1 = basket.AddBagel(Basket.Bagel.Egg);
-        string result2 = basket.AddBagel(Basket.Bagel.Plain);
-        string result3 = basket.AddBagel(Basket.Bagel.Everything);
-        string result4 = basket.AddBagel(Basket.Bagel.Sesame);
+        string result1 = basket.AddBagel(Basket.Bagel.Everything);
+        string result2 = basket.AddBagel(Basket.Bagel.Sesame);
 
         Assert.That(result1, Is.EqualTo("Bagel added to the basket."));
-        Assert.That(result2, Is.EqualTo("Bagel added to the basket."));
-        Assert.That(result3, Is.EqualTo("Bagel added to the basket."));
-        Assert.That(result4, Is.EqualTo("Basket is full."));
+        Assert.That(result2, Is.EqualTo("Basket is full."));
         Assert.That(basket.GetBasket().Count, Is.EqualTo(3));
+    }
+    
+    public void RemovingBagelFromBasket()
+    {
+        basket.AddBagel(Basket.Bagel.Everything);
+        
+        string result1 = basket.RemoveBagel(Basket.Bagel.Plain);
+        string result2 = basket.RemoveBagel(Basket.Bagel.Salt);
+
+        Assert.That(result1, Is.EqualTo("Bagel was removed from the basket."));
+        Assert.That(result2, Is.EqualTo("This bagel doesn't exist in basket"));
     }
 }
