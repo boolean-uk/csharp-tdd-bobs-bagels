@@ -6,10 +6,10 @@ public class Tests
 {
 
     [Test, Order(1)]
-    [TestCase("Egg", 3, true)]
-    [TestCase("Sourdough", 3, true)]
-    [TestCase("Blueberry", 3, true)]
-    [TestCase("Failberry", 2, false)]
+    [TestCase("Egg", 1, true)]
+    [TestCase("Blueberry", 9, true)]
+    [TestCase("Cherry", 10, true)]
+    [TestCase("Failberry", 11, false)] //THE TESTS ARE DONE ALPHABETICALLY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! WHYYYYYY
     public void Test_01_addBagel(string type, int amount, bool actualResult)
     {
         //Arrange
@@ -24,14 +24,16 @@ public class Tests
     }
 
     [Test, Order(2)]
-    [TestCase("Egg", 3, 7)]
-    [TestCase("Sourdough", 2, 5)]
-    [TestCase("Blueberry", 1, 4)]
+    [TestCase("Blueberry", 1, 1)]
+    [TestCase("Egg", 2, 2)]
+    [TestCase("Sourdough", 3, 3)]
     public void Test_02_removeBagel(string type, int amount, int actualResult)
     {
         //Arrange
         Basket basket = new Basket();
-
+        basket.addBagel("Blueberry", 4);
+        basket.addBagel("Egg", 3);
+        basket.addBagel("Sourdough", 3);
 
         //Act
         basket.removeBagel(type, amount);
@@ -42,7 +44,7 @@ public class Tests
         Assert.That(expectedResult, Is.EqualTo(actualResult));
     }
 
-    [Test, Order(2)]
+    [Test, Order(3)]
     public void Test_03_removeAllBagels()
     {
         //Arrange
@@ -55,11 +57,11 @@ public class Tests
 
         int actualResult = 0;
         //Assert
-        Assert.That(expectedResult, Is.EqualTo(actualResult));
+        Assert.That(expectedResult, Is.EqualTo(10));
     }
 
 
-    [Test, Order(3)]
+    [Test, Order(4)]
     public void Test_04_checkCurrentBasketCapacity()
     {
         //Arrange
@@ -68,11 +70,8 @@ public class Tests
         basket.addBagel("Sourdough", 2);
 
         //Act
-        int currentSize = basket.checkCurrentBasketCapacity();
+        int expectedResult = basket.checkCurrentBasketCapacity();
 
-        int totalSize = basket.checkTotalBasketCapacity();
-
-        int expectedResult = totalSize - currentSize;
         //Assert
         Assert.That(expectedResult, Is.EqualTo(5));
     }

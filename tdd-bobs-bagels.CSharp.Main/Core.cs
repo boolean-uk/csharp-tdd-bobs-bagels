@@ -8,39 +8,68 @@ namespace tdd_bobs_bagels.CSharp.Main
 {
     public class Basket
     {
+        private List<string> basket = new List<string>();
+
+        private int _basketSize = 10;
+
+        public int basketSize { get { return _basketSize; } set {  _basketSize = value; } }
+
         public bool addBagel(string type, int amount)
         {
-            throw new NotImplementedException();
+            if ((basket.Count + amount) > basketSize)
+            {
+                return false;
+            }
+            else
+            {
+                for (int i = 0; i < amount; i++)
+                {
+
+                    basket.Add(type);
+                }
+                return true;
+            }
         }
 
-        public bool removeBagel(string type, int amount)
-        {
-            throw new NotImplementedException();
+        public void removeBagel(string type, int amount)
+        { 
+            for (int i = 0; i < amount; i++)
+            {
+                basket.Remove(type);
+            }
         }
 
-        public bool removeAllBagels()
+        public void removeAllBagels()
         {
-            throw new NotImplementedException();
+            basket.Clear();
         }
 
-        public int changeBasketSize(int newSize)
+        public void changeBasketSize(int newSize)
         {
-            throw new NotImplementedException();
+            basketSize = newSize;
         }
 
         public int checkCurrentBasketCapacity()
         {
-            throw new NotImplementedException();
+            int current = basketSize - basket.Count();
+            return current;
         }
 
         public int checkTotalBasketCapacity()
         {
-            throw new NotImplementedException();
+            return basketSize;
         }
 
         public bool checkIfBagelIsInBasket(string type)
         {
-            throw new NotImplementedException();
+            if(basket.Contains(type))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
 
