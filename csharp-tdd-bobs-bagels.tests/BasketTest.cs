@@ -56,15 +56,22 @@ public class BasketTest
 
     }
 
-    [Test]
-    public void ChangeBasketCapacity()
+    [TestCase(5)]
+    public void ChangeBasketCapacity(int newCapacity)
     {
         //arrange
+        Basket basket = new Basket();
+        basket.AddBagel("Plain", 2);
+        basket.AddBagel("Sourdough", 3);
+        basket.AddBagel("Egg", 4);
 
         //act
+        basket.ChangeBasketCapacity(newCapacity);
+        basket.AddBagel("Everything", 2);
 
         //assert
-        Assert.Fail();
+        Assert.IsTrue(basket.Capacity == newCapacity);
+        
     }
     
 }

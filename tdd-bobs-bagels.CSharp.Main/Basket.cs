@@ -8,16 +8,23 @@ using System.Threading.Tasks;
 namespace Main
 {
     public class Basket
-    { 
+    {
 
-        public Dictionary<string, int> Bagels { get; set; } = new Dictionary<string, int>(3);
+        public int Capacity { get; set; } = 3;
+
+
+        public Dictionary<string, int> Bagels { get; set; } = new Dictionary<string, int>();
 
         
  
         public void AddBagel(string type, int price)
         {
-            Bagels.Add(type, price);
-            Console.WriteLine($"{type} bagel has been added to basket");
+            if (!IsBasketFull())
+            {
+                Bagels.Add(type, price);
+                Console.WriteLine($"{type} bagel has been added to basket");
+            }
+
         }
 
         public bool RemoveBagel(string type)
@@ -37,21 +44,24 @@ namespace Main
 
         public bool IsBasketFull()
         {
-           if(Bagels.Count >= 3)
+           if(Bagels.Count >= Capacity)
             {
-                return true;
                 Console.WriteLine("Basket is full");
+                return true;
             }
             else
             {
-                return false;
                 Console.WriteLine("Basket is not full");
+                return false;
             }
         }
 
-        public void ChangeBasketCapacity()
+        public void ChangeBasketCapacity(int newCapacity)
         {
-            throw new NotImplementedException();
+            if (Bagels.Count < newCapacity)
+            {
+                Capacity = newCapacity;
+            }
         }
 
 
