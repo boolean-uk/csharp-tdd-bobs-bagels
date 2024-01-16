@@ -36,6 +36,7 @@ public class Tests
         Assert.That(result2, Is.EqualTo("This bagel doesn't exist in basket"));
     }
 
+    [Test]
     public void ChangingBasketCapasity()
     {
         basket.ChangeCapasity(5);

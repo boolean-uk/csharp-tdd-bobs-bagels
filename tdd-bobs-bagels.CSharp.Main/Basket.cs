@@ -40,5 +40,10 @@ namespace tdd_bobs_bagels.CSharp.Main
             }
             else return "This bagel doesn't exist in basket";
         }
+
+        public void ChangeCapasity(int v)
+        {
+            basketSize = v;
+        }
     }
 }
