@@ -1,0 +1,18 @@
+
+| Classes    | Members                                                               | Methods                                     | Scenario                                                 | Outputs             |
+|------------|-----------------------------------------------------------------------|---------------------------------------------|----------------------------------------------------------|---------------------|
+| `Core`     | `String capacity` (capacity of items in the basket)                   |                      |                                                          |                     |
+|            | `List<string> basketList` (list of items in basket)                   |                                             |                                                          |                     |
+|            |                                                                       | `addBagel(string name)`                                           |  Bagel *is not* already in the list                      | true                |
+|            |                                                                       |                                             |                                                          |                     |
+|            |                                                                       |                                             | Bagel *is* already in the list                           | false               |
+|            |                                                                       | `removeBagel(string bagel)`                 | Bagel with the provided name *is not* in the list        | true                |
+|            |                                                                       |                                             |                                                          |                     |
+|		     |                                                                       | `fullBasket()`						       | Basket is full                         				  | true                | 
+|            |                                                                       |                                             | Basket is not full                                       | false               |
+|            |                                                                       |                                             |                                                          |                     |
+|            |                                                                       | `basketCapacity(int capacity)`              | Basket capacity is increased                             | int                 |
+|            |                                                                       |                                             |                                                          |                     |
+|            |                                                                       |                                             |                                                          |                     |
+|            |                                                                       | `notInBasket(string bagel)`                 | Trying to remove bagel not in basket                     | string              |
+|            |                                                                       |                                             |                                                          |                     |
