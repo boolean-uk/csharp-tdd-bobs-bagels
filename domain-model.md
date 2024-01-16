@@ -22,7 +22,6 @@ As a Bob's Bagels manager,
 |---------------------|--------------------------------------------------------------|------------------------|---------|
 | `abstract Object`  |                                                    |                        | `` |
 |                     |                                                      |                        | `` |
-| `abstract``Person : Object` | ``                                           |                        | `` |
 | `abstract Person : Object` |                                            |                        | `` |
 |                     |                                                      |                        | `` |
 | `Customer : Person` |                                                      |                        | `` |
