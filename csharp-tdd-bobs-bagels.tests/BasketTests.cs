@@ -49,7 +49,7 @@ public class Tests
         _basket.AddProduct(cheeseBagel);
         string nonexistent = _basket.RemoveProduct(jellyBagel);
 
-        Assert.That(nonexistent, Is.EqualTo("No such product to remove"));
+        Assert.That(nonexistent, Is.EqualTo("No such product to remove."));
     }
 
 }

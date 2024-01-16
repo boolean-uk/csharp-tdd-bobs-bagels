@@ -9,20 +9,34 @@ namespace tdd_bobs_bagels.CSharp.Main
     public class Basket
     {
         private List<string> _items;
+        private int _capacity;
 
         public Basket()
         {
             _items = new List<string>();
+            _capacity = 10;
         }
 
         public string AddProduct(string cheeseBagel)
         {
-            throw new NotImplementedException();
+            string encumbered;
+            if(_items.Count == _capacity) 
+            {
+                encumbered = "Nope. Overencumbered.";
+            }
+            else
+            {
+                _items.Add(cheeseBagel);
+                encumbered = "Product added to basket";
+            }
+
+            return encumbered;
+            
         }
 
         public void ChangeCapacity(int v)
         {
-            throw new NotImplementedException();
+            _capacity = v;
         }
 
         public List<string> GetItems()
@@ -30,9 +44,20 @@ namespace tdd_bobs_bagels.CSharp.Main
             return _items;
         }
 
-        public string RemoveProduct(string cheeseBagel)
+        public string RemoveProduct(string product)
         {
-            throw new NotImplementedException();
+            string nonexistent;
+            if (!_items.Contains(product))
+            {
+                nonexistent = "No such product to remove.";
+            }
+            else
+            {
+                _items.Remove(product);
+                nonexistent = "Product removed from basket";
+            }
+
+            return nonexistent;
         }
     }
 }
