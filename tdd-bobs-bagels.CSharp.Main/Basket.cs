@@ -15,29 +15,33 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public Basket(int ID)
         {
-            throw new NotImplementedException();
+            _customerID = ID;
+            _items = new List<String>();
+            _itemCapacityLimit = 5;
         }
 
         public void AddItem(String item)
         {
-            throw new NotImplementedException();
+            if (HasAvailableSpace()) Items.Add(item);
+            else throw new InvalidOperationException("You can not add more items when your basket has reach it's maximum capacity!");
         }
 
         public void RemoveItem(int itemIndex)
         {
-            throw new NotImplementedException();
+            if (itemIndex >= 0 && itemIndex < Items.Count) Items.RemoveAt(itemIndex);
+            else throw new InvalidOperationException("You are trying to remove a non-existent item.");
         }
 
         public bool HasAvailableSpace()
         {
-            throw new NotImplementedException();
+            return Items.Count < _itemCapacityLimit;
         }
 
         public void SetItemCapacityLimit(int itemCapacityLimit)
         {
-            throw new NotImplementedException();
+            _itemCapacityLimit = itemCapacityLimit;
         }
 
-        public List<String> Items { get { throw new NotImplementedException(); } }
+        public List<String> Items { get { return _items; } }
     }
 }
