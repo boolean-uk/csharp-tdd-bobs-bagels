@@ -13,6 +13,16 @@ namespace tdd_bobs_bagels.CSharp.Main
             throw new NotImplementedException();
         }
 
+        public bool removeBagel(string type, int amount)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool removeAllBagels()
+        {
+            throw new NotImplementedException();
+        }
+
         public int changeBasketSize(int newSize)
         {
             throw new NotImplementedException();
@@ -33,15 +43,9 @@ namespace tdd_bobs_bagels.CSharp.Main
             throw new NotImplementedException();
         }
 
-        public bool removeBagel(string type, int amount)
-        {
-            throw new NotImplementedException();
-        }
 
-        public bool removeAllBagels()
-        {
-            throw new NotImplementedException();
-        }
+
+
     }
 
 }

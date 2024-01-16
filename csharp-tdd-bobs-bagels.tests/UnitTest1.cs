@@ -102,21 +102,23 @@ public class Tests
         Basket basket = new Basket();
 
         //Act
-        basket.changeBasketSize(newSize)
+        basket.changeBasketSize(newSize);
         int expectedResult = basket.checkTotalBasketCapacity();
 
         //Assert
-        Assert.That(expectedResult, Is.EqualTo(newSize);
+        Assert.That(expectedResult, Is.EqualTo(newSize));
     }
 
     [Test, Order(7)]
-    [TestCase("", true)]
-    [TestCase("", true)]
-    [TestCase("", false)]
+    [TestCase("Egg", true)]
+    [TestCase("Sourdough", true)]
+    [TestCase("Failberry", false)]
     public void Test_07_checkIfBagelIsInBasket(string type, bool actualResult)
     {
         //Arrange
         Basket basket = new Basket();
+        basket.addBagel("Egg", 3);
+        basket.addBagel("Sourdough", 2);
 
         //Act
         bool expectedResult = basket.checkIfBagelIsInBasket(type);
