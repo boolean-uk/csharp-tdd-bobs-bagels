@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace tdd_bobs_bagels.CSharp.Main.Interface
 {
-    public class IBasketOperations
+    public interface IBasketOperations
     {
-        public IBasketOperations() 
+        bool AlterSize(int newSize) 
         {
-            void AlterSize(int newSize) 
-            { 
-                
-            }
+            return true;
         }
     }
 }

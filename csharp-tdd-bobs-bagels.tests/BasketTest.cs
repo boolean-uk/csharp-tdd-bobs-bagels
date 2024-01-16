@@ -20,15 +20,23 @@ namespace csharp_tdd_bobs_bagels.tests
         [TestCase(2)]
         [TestCase(20)]
         [TestCase(50)]
-        [TestCase(-5)]
         [TestCase(0)]
-        [TestCase(10000)]
         public void ManagerResizeTest(int newSize)
         {
             Manager manager = new Manager();
             Basket basket = new Basket();
 
             Assert.IsTrue(manager.AlterSize(basket, newSize));
+        }
+
+        [TestCase(-5)]
+        [TestCase(10000)]
+        public void ManagerResizeTest2(int newSize)
+        {
+            Manager manager = new Manager();
+            Basket basket = new Basket();
+
+            Assert.IsFalse(manager.AlterSize(basket, newSize));
         }
 
         [Test]
@@ -71,5 +79,7 @@ namespace csharp_tdd_bobs_bagels.tests
             Assert.IsFalse(basket.RemoveProduct(product1));
             Assert.IsFalse(basket.RemoveProduct(fakeBagel));
         }
+
+
     }
 }

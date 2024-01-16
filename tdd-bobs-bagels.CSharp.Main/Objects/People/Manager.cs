@@ -15,7 +15,7 @@ namespace Objects.People
 
         public bool AlterSize(Basket basket, int newSize)
         {
-            throw new NotImplementedException();
+            return basket.AlterSize(newSize);
         }
     }
 }

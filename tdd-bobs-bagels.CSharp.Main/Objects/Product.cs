@@ -8,9 +8,13 @@ namespace tdd_bobs_bagels.CSharp.Main.Objects
 {
     public abstract class Product : Object
     {
+        private double _price = 20;
+
+        public double Price { get => _price; }
+
         public double GetPrice()
         {
-            throw new NotImplementedException();
+            return Price;
         }
     }
 }
