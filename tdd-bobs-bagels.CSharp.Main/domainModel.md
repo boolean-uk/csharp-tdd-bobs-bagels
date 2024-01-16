@@ -33,9 +33,9 @@ Properties:
 
 Methods:
 	AddBagel(String, Bagel)
-		(Add bagels to basket as strings, and returns error message if basket is full)
+		(Add bagels to basket as strings, if max capacity is'nt reached)
 	RemoveBagel(String, Bagel)
-		(Removes Bagels from the basket if they exists, or returns error message otherwise)
+		(Removes Bagels from the basket if they exists)
 	AdjustBasketCapacity(Int, Capacity)
 		Adjusts the capacity of the basket to the value provided
 	
