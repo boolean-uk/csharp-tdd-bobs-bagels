@@ -20,19 +20,26 @@ namespace Classes
 
         public string Add(Bagel bagel)
         {
-
-            return "";
+            if ( _bagels.Count < Capacity)
+            {
+                _bagels.Add(bagel);
+                return "";
+            }
+            return "Basket is full";
         }
 
         public string Remove(string type) 
         {
+            int count = _bagels.Count;
+            _bagels = _bagels.Where(b => b.Type != type).ToList();
 
-            return "";
+            if (count < _bagels.Count) { return ""; }
+            return "Could not find given bagel type";
         }
 
         public void SetCapacity(int capacity)
         {
-
+            _capacity = capacity;
         }
     }
 }
