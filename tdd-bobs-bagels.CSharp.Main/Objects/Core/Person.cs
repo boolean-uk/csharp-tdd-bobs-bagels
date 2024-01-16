@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Objects.People
+namespace tdd_bobs_bagels.CSharp.Main.Objects.Core
 {
-    public abstract class Person
+    public abstract class Person : Object
     {
 
     }

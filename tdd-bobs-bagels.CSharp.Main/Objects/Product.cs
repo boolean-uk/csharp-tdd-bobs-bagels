@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace tdd_bobs_bagels.CSharp.Main.Objects
 {
-    public class Bagel : Product
+    public abstract class Product : Object
     {
-        public Bagel() { }
+        public double GetPrice()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
