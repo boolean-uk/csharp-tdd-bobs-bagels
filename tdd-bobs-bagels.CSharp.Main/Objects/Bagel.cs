@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace tdd_bobs_bagels.CSharp.Main
+namespace tdd_bobs_bagels.CSharp.Main.Objects
 {
-    public class Core
+    public class Bagel : Product
     {
-
+        public Bagel() { }
     }
 }
