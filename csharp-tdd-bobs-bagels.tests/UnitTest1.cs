@@ -9,7 +9,10 @@ public class BobsBagelsTests
         {
 
         [Test]
-        public void TestRun() { }
+        public void TestRun()
+        {
+            
+        }
             public void TestAdd()
         {
             Core core = new Core();
@@ -23,7 +26,6 @@ public class BobsBagelsTests
         [Test]
         public void TestAddFull()
         {
-            Assert.Pass();
             Core core = new Core();
 
             core.Add("Nutella");
@@ -33,9 +35,14 @@ public class BobsBagelsTests
             core.Add("Egg");
 
             Assert.Throws<Exception>(() => core.Add("Cheddar"));
-        }
+            foreach (var bagel in core.Bagels)
+            {
+                Console.WriteLine(bagel);
+            }
 
-        [Test]
+    }
+
+    [Test]
         public void TestRemove()
         {
             Core core = new Core();
@@ -43,10 +50,19 @@ public class BobsBagelsTests
             core.Add("Plain");
             core.Remove("Plain");
 
-            Assert.That(core.Bagels.Count, Is.EqualTo(0));
-        }
+            Assert.That(core.Bagels.Count, Is.EqualTo(0), "Bagel count should be 0");
+            Assert.IsFalse(core.Bagels.Contains("Plain"), "Bagel 'Plain' should be removed"); //checks ifFalse on bagel is in List<>
+            
+            Console.WriteLine("Bagels in the list after removal:");
+            foreach (var bagel in core.Bagels)
+            {
+                Console.WriteLine(bagel); //outputs nothing since nothing is in list
+            }
 
-        [Test]
+
+    }
+
+    [Test]
         public void TestRemoveNonexistant()
         {
             Core core = new Core();
@@ -54,10 +70,11 @@ public class BobsBagelsTests
             core.Add("Plain");
 
             Assert.Throws<Exception>(() => core.Remove("Cheddar"));
-        }
+            Console.WriteLine(core.Equals(core));
+    }
 
         [Test]
-        public void IncreaseCapacity()
+        public void UpCapacity()
         {
             Core core = new Core();
 
@@ -67,11 +84,16 @@ public class BobsBagelsTests
             core.Add("Cheese");
             core.Add("Egg");
 
-            Assert.Throws<Exception>(() => core.Add("Cheddar"));
-
-            core.DoubleCapacity();
+            core.UpCapacity();
             core.Add("Cheddar");
+            core.Add("Anette");
+            core.Add("Mari");
 
-            Assert.That(core.Bagels.Count, Is.EqualTo(6));
-        }   
+            Assert.That(core.Bagels.Count, Is.EqualTo(8));
+            Console.WriteLine($"Bagels count after capacity increase: {core.Bagels.Count}");
+            foreach (var bagel in core.Bagels)
+            {
+                Console.WriteLine(bagel);
+            }
+    }   
 }
