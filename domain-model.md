@@ -1,0 +1,39 @@
+1.
+As a member of the public,
+So I can order a bagel before work,
+I'd like to add a specific type of bagel to my basket.
+| Classes | Methods                     | Scenario                     | Outputs          |
+|---------|-----------------------------|------------------------------|------------------|
+|`Basket` | `Add(string bagel)`         | add bagel to basket          | Bool             |
+
+2.
+As a member of the public,
+So I can change my order,
+I'd like to remove a bagel from my basket.
+| Classes | Methods                     | Scenario                     | Outputs            |
+|---------|-----------------------------|------------------------------|--------------------|
+|`Basket` | `Remove(string bagel)`      | remove bagel from basket     | Boolean            |
+
+3.
+As a member of the public,
+So that I can not overfill my small bagel basket
+I'd like to know when my basket is full when I try adding an item beyond my basket capacity.
+| Classes | Methods                            | Scenario                                   | Outputs        |
+|---------|------------------------------------|--------------------------------------------|----------------|
+|`Basket` | `FullBasket(List<String> bagels`   | check if basket full before adding item    | Boolean        |
+
+4.
+As a Bob's Bagels manager,
+So that I can expand my business,
+I’d like to change the capacity of baskets.
+| Classes | Methods                       | Scenario                                    | Outputs        |
+|---------|-------------------------------|---------------------------------------------|----------------|
+|`Basket` | `BasketCapacity(int newCap)`  | change capacity of basket to provided int   | int            |
+
+5.
+As a member of the public
+So that I can maintain my sanity
+I'd like to know if I try to remove an item that doesn't exist in my basket.
+| Classes | Methods              | Scenario                                       | Outputs        |
+|---------|----------------------|------------------------------------------------|----------------|
+|`Basket` | `SchrodingersBagel`  | check if item exists in basket before removing | bool           |
