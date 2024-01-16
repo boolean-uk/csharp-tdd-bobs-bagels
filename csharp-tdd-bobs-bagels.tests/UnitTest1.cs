@@ -84,7 +84,7 @@ public class BobsBagelsTests
             core.Add("Cheese");
             core.Add("Egg");
 
-            core.UpCapacity();
+            core.IncreaseCapacity();
             core.Add("Cheddar");
             core.Add("Anette");
             core.Add("Mari");

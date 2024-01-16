@@ -42,7 +42,7 @@ namespace tdd_bobs_bagels.CSharp.Main
             }
         }
 
-        public void UpCapacity()
+        public void IncreaseCapacity()
         {
 
             //BIG customer waves for breakfast :PPPP
