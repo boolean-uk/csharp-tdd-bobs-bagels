@@ -5,7 +5,12 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tdd-bobs-bagels.CSharp.Main", "tdd-bobs-bagels.CSharp.Main\tdd-bobs-bagels.CSharp.Main.csproj", "{B747E7EA-396B-4AE6-B931-6C2056543157}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp-tdd-bobs-bagels.tests", "csharp-tdd-bobs-bagels.tests\csharp-tdd-bobs-bagels.tests.csproj", "{34FADA27-F7C6-4A96-BDDF-23C04E4EAAF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tdd-bobs-bagels.Tests", "csharp-tdd-bobs-bagels.tests\tdd-bobs-bagels.Tests.csproj", "{34FADA27-F7C6-4A96-BDDF-23C04E4EAAF0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{565B127F-6012-4411-A584-CC7E16288351}"
+	ProjectSection(SolutionItems) = preProject
+		domain-model.md = domain-model.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
