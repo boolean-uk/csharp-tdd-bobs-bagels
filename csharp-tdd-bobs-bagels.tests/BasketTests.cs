@@ -23,7 +23,8 @@ public class Tests
         Assert.That(result2, Is.EqualTo("Basket is full."));
         Assert.That(basket.GetBasket().Count, Is.EqualTo(3));
     }
-    
+
+    [Test]
     public void RemovingBagelFromBasket()
     {
         basket.AddBagel(Basket.Bagel.Everything);

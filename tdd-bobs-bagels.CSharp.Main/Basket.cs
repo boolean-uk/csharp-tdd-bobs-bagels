@@ -30,5 +30,15 @@ namespace tdd_bobs_bagels.CSharp.Main
             }
             else { return "Error";  } 
         }
+
+        public string RemoveBagel(Bagel bagel)
+        {
+            if (basket.Contains(bagel))
+            {
+                basket.Remove(bagel);
+                return "Bagel was removed from the basket.";
+            }
+            else return "This bagel doesn't exist in basket";
+        }
     }
 }
