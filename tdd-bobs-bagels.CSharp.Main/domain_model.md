@@ -32,9 +32,13 @@ verbs/actions: know if bagel exists, maintain sanity (jk)
 
 | Classes         | Methods                                        | Scenario                                      | Outputs   |
 |-----------------|------------------------------------------------|-----------------------------------------------|-----------|
-| `Basket`	      | `addBagel(string type, int amount)`			   | Add bagel and amount, return amnt added       | int       |
+| `Basket`	      | `addBagel(string type, int amount)`			   | If bagel was added						       | true      |
+|       	      |                                      		   | If bagel wasn't added	                       | false     |
 |       	      | `removeBagel(string type, int amount)`		   | Remove bagel and amount, return amnt removed  | int       |
-|       	      | `checkBasketCapacity()`		                   | return size of basket                         | int       |
-|       	      | `changeBasketSize(int newSize)`		           | Change to new size, return new size int       | int       |
+|       	      | `removeAllBagel()`							   | Removes all bagels in basket				   | int       |
+|       	      | `checkCurrentBasketCapacity()`		           | return size of current free basket space      | int       |
+|       	      | `checkTotalBasketCapacity()`		           | return size of total basket space             | int       |
 |       	      | `checkIfBagelinBasket(string type)`		       | If Basket is populated by bagel               | true      |
 |                 |                                                | If it is empty		                           | false     |
+|       	      | `changeBasketSize(int newSize)`		           | Change to new size, return new size int       | int       |
+
