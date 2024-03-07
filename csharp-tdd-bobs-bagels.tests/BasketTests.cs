@@ -17,6 +17,10 @@ public class BasketTests
         // bagel is added to each test.
         _basket.AddBagelToBasket("Spelt Bagel");
         _basket.AddBagelToBasket("Sesame salmon Bagel");
+        _basket.AddBagelToBasket("Whole wheat Bagel");
+        _basket.AddBagelToBasket("Avocado Bagel");
+        _basket.AddBagelToBasket("Hummus Bagel");
+        _basket.AddBagelToBasket("Egg Bagel");
     }
 
     [Test]
@@ -47,7 +51,7 @@ public class BasketTests
     public void TestFullBasket()
     {
         // execute the actual function to test
-        bool maxBagelsInBasket = _bagelsInBasket.Count > 5;
+        bool maxBagelsInBasket = _basket.FullBasket(5);
         // Assert test, whether execution is successful ( -> check if results / outputs are ok)
         Assert.That(maxBagelsInBasket, Is.True);    
     }
