@@ -78,7 +78,12 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool SetBasketCapacity(int newCapacity)
         {
-           
+            Console.WriteLine($"Your basket capacity is now {_basketCapacity}");
+            if (_basketCapacity <= newCapacity)
+            {
+                Console.WriteLine($"Your new basket capacity is now a maximum of {newCapacity} bagels.");
+                return true;
+            }
             return false;
         }
     }

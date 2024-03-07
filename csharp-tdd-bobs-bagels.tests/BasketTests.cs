@@ -64,4 +64,16 @@ public class BasketTests
         Assert.That(setNewCapacity, Is.True);
     }
 
+    /*
+
+    [Test]
+    public void TestDeletedBagelThatNotExcists()
+    {
+        // execute the actual function to test
+
+        // Assert test, whether execution is successful ( -> check if results / outputs are ok)
+
+    }
+    */
+
 }
