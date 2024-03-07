@@ -17,6 +17,17 @@ namespace tdd_bobs_bagels.CSharp.Main
         }
         public bool AddBagelToBasket(string bagel)
         {
+            // if _ordersInBasket doesn't have new add bagel in list, add it to list
+            if (!_ordersInBasket.Contains(bagel))
+            {
+                // add bagel to list
+                _ordersInBasket.Add(bagel);
+                // display wich bagel is added
+                Console.WriteLine($"Your {bagel} is added to your order.");
+                return true;
+            }
+            // if false show which bagel is not added to list
+            Console.WriteLine($"{bagel} is not added to order");
             return false;
         }
         
