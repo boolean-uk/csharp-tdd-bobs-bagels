@@ -20,7 +20,6 @@ public class BasketTests
         _basket.AddBagelToBasket("Whole wheat Bagel");
         _basket.AddBagelToBasket("Avocado Bagel");
         _basket.AddBagelToBasket("Hummus Bagel");
-        _basket.AddBagelToBasket("Egg Bagel");
     }
 
     [Test]

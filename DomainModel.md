@@ -50,12 +50,13 @@ METHODS
 - public bool changeOrder(), return true when bagel is removed from order, message of changed order, return false message with order not found
 
 `I'd like to know when my basket is full when I try adding an item beyond my basket capacity.`
-- public bool fullBasket(), return false, message when bakset is full 
+- public bool fullBasket(), return true when full, message when bakset is full 
 
 `I'd like to know when my basket is full when I try adding an item beyond my basket capacity.`
 - public void setBasketSize(int newSize), 
 
 `I'd like to know if I try to remove an item that doesn't exist in my basket.`
-- public bool removeOrder(), return true when order is removed, message with removed order.
+- public bool removeOrder(), return false when item doesnt exist while trying to delete it. 
+  return true if exists message with removed order.
 
 

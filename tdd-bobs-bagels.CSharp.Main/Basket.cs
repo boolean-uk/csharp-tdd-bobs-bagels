@@ -54,6 +54,14 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool FullBasket(int maximumBagels)
         {
+            // count amount of bagels in _ordersInBasket, if egual or higher than maximumBagels
+            if (_ordersInBasket.Count >= maximumBagels)
+            {
+                // message that your basket is full
+                Console.WriteLine("Your basket is full, not possible to add more bagels to your order.");
+                return true;
+            }
+            Console.WriteLine("You can add more bagels to your order!");
             return false;
         }
     }
