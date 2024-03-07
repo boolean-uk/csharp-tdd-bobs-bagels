@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -35,8 +36,26 @@ namespace tdd_bobs_bagels.CSharp.Main
         // code for change order and remove bagel from order / basket
         public bool ChangeOrder(string bagelToRemove)
         {
-            return true;
+            if (_ordersInBasket.Contains("Spelt Bagel")){
+                _ordersInBasket.Remove(bagelToRemove);
+                Console.WriteLine($"Your {bagelToRemove} is removed from your order.");
+
+                // prints a list of remaining bagels in your order / basket
+                Console.WriteLine("These are your remaining bagel(s) in your order:");
+                foreach (var bagel in _ordersInBasket)
+                {
+                    Console.WriteLine(bagel);
+                }
+
+                return true;
+            }
+            return false;
+        }   
+
+        public bool FullBasket(int maximumBagels)
+        {
+            return false;
         }
-        
+
     }
 }

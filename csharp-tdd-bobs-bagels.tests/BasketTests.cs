@@ -16,6 +16,7 @@ public class BasketTests
         _bagelsInBasket = new List<string>();
         // bagel is added to each test.
         _basket.AddBagelToBasket("Spelt Bagel");
+        _basket.AddBagelToBasket("Sesame salmon Bagel");
     }
 
     [Test]
@@ -40,6 +41,14 @@ public class BasketTests
         bool changeOrder = _basket.ChangeOrder("Spelt Bagel");
         // Assert test, whether execution is successful ( -> check if results / outputs are ok)
         Assert.That(changeOrder, Is.True);
+    }
 
+    [Test]
+    public void TestFullBasket()
+    {
+        // execute the actual function to test
+        bool maxBagelsInBasket = _bagelsInBasket.Count > 5;
+        // Assert test, whether execution is successful ( -> check if results / outputs are ok)
+        Assert.That(maxBagelsInBasket, Is.True);    
     }
 }
