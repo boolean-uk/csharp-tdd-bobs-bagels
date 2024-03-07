@@ -89,7 +89,13 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool NoBagelToDelete()
         {
-            return true;
+            _ordersInBasket.Clear();
+            //_basketCapacity = 0;
+            Console.WriteLine("Your basket is empty, bagel can't be deleted from basket. Amount of bagels in basket are: " + _ordersInBasket.Count());
+            return true;    
+            
+            //Console.WriteLine("Your bagel can be removed.");
+            //return false;
         }
     }
 }

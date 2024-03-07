@@ -68,9 +68,11 @@ public class BasketTests
     public void TestDeletedBagelThatNotExcists()
     {
         // execute the actual function to test
-        bool noBagelToDelete = _basket.Equals(null);
+        bool noBagelToDelete = _basket.NoBagelToDelete();
+
         // Assert test, whether execution is successful ( -> check if results / outputs are ok)
-        Assert.That(!noBagelToDelete, Is.False);
+        Assert.That(noBagelToDelete, Is.True);
+        //Assert.That(_basket.BasketCapacity, Is.EqualTo(0));
     }
     
 
