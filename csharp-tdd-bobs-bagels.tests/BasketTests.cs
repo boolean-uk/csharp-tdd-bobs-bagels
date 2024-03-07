@@ -64,16 +64,14 @@ public class BasketTests
         Assert.That(setNewCapacity, Is.True);
     }
 
-    /*
-
     [Test]
     public void TestDeletedBagelThatNotExcists()
     {
         // execute the actual function to test
-
+        bool noBagelToDelete = _basket.Equals(null);
         // Assert test, whether execution is successful ( -> check if results / outputs are ok)
-
+        Assert.That(!noBagelToDelete, Is.False);
     }
-    */
+    
 
 }

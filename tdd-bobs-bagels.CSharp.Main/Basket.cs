@@ -86,5 +86,10 @@ namespace tdd_bobs_bagels.CSharp.Main
             }
             return false;
         }
+
+        public bool NoBagelToDelete()
+        {
+            return true;
+        }
     }
 }
