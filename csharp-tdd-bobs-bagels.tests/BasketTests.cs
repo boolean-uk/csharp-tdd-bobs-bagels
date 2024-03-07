@@ -12,7 +12,7 @@ public class BasketTests
     public void Setup()
     {
         // for each test a new Basket() will be created
-        _basket = new Basket();
+        _basket = new Basket(5);
         _bagelsInBasket = new List<string>();
         // bagel is added to each test.
         _basket.AddBagelToBasket("Spelt Bagel");
@@ -54,4 +54,14 @@ public class BasketTests
         // Assert test, whether execution is successful ( -> check if results / outputs are ok)
         Assert.That(maxBagelsInBasket, Is.True);    
     }
+
+    [Test]
+    public void TestSetNewBasketCapacity()
+    {
+        // execute the actual function to test
+        bool setNewCapacity = _basket.SetBasketCapacity(20);
+        // Assert test, whether execution is successful ( -> check if results / outputs are ok)
+        Assert.That(setNewCapacity, Is.True);
+    }
+
 }

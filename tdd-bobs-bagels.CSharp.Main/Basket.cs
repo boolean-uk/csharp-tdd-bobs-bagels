@@ -11,11 +11,17 @@ namespace tdd_bobs_bagels.CSharp.Main
     {
         //private Basket _basket;
         private List<string> _ordersInBasket = new List<string>();
-       // private List<Basket> __basket = new List<Basket>();
+        private int _basketCapacity;
 
-        public Basket()
+        public int BasketCapacity
+        {
+            get { return _basketCapacity; }
+            set { _basketCapacity = value; }
+        }
+        public Basket(int basketCapacity)
         {
             _ordersInBasket = new List<string>();
+            _basketCapacity = basketCapacity;
         }
         public bool AddBagelToBasket(string bagel)
         {
@@ -25,7 +31,7 @@ namespace tdd_bobs_bagels.CSharp.Main
                 // add bagel to list
                 _ordersInBasket.Add(bagel);
                 // display wich bagel is added
-                Console.WriteLine($"Your {bagel} is added to your order.");
+                Console.WriteLine($"- {bagel} is added to your order.");
                 return true;
             }
             // if false show which bagel is not added to list
@@ -34,11 +40,13 @@ namespace tdd_bobs_bagels.CSharp.Main
         }
 
         // code for change order and remove bagel from order / basket
+        // if false bagel cant be removed from basket, does not exist.
         public bool ChangeOrder(string bagelToRemove)
         {
-            if (_ordersInBasket.Contains("Spelt Bagel")){
+            if (_ordersInBasket.Contains("Spelt Bagel"))
+            {
                 _ordersInBasket.Remove(bagelToRemove);
-                Console.WriteLine($"Your {bagelToRemove} is removed from your order.");
+                Console.WriteLine($"{bagelToRemove} is removed from your order.");
 
                 // prints a list of remaining bagels in your order / basket
                 Console.WriteLine("These are your remaining bagel(s) in your order:");
@@ -48,6 +56,9 @@ namespace tdd_bobs_bagels.CSharp.Main
                 }
 
                 return true;
+            } else
+            {
+                Console.WriteLine("This bagel is not in your order, it cant be removed");
             }
             return false;
         }   
@@ -62,6 +73,12 @@ namespace tdd_bobs_bagels.CSharp.Main
                 return true;
             }
             Console.WriteLine("You can add more bagels to your order!");
+            return false;
+        }
+
+        public bool SetBasketCapacity(int newCapacity)
+        {
+           
             return false;
         }
     }
