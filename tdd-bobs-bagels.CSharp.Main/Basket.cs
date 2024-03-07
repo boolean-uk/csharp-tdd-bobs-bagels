@@ -10,6 +10,7 @@ namespace tdd_bobs_bagels.CSharp.Main
     {
         //private Basket _basket;
         private List<string> _ordersInBasket = new List<string>();
+       // private List<Basket> __basket = new List<Basket>();
 
         public Basket()
         {
@@ -27,8 +28,14 @@ namespace tdd_bobs_bagels.CSharp.Main
                 return true;
             }
             // if false show which bagel is not added to list
-            Console.WriteLine($"{bagel} is not added to order");
+            Console.WriteLine($"{bagel} is not added to order!");
             return false;
+        }
+
+        // code for change order and remove bagel from order / basket
+        public bool ChangeOrder(string bagelToRemove)
+        {
+            return true;
         }
         
     }
